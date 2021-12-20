@@ -1,0 +1,43 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.navbar-toggle {
+    margin-top: 17px;
+}
+
+.navbar-nav-item:nth-child(1),
+.navbar-nav-item:nth-child(2) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-collapse {
+    border-top: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.page-heading {
+    margin-top: 30px;
+}
+
+.section {
+    background-color: #d6d6d6;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.section-title {
+    margin: 0 0 15px;
+}
