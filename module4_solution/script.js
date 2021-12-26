@@ -10,9 +10,9 @@
     var firstLetter = name.toLowerCase().charAt(0);
     
     if (firstLetter == 'j') {
-      helloSpeaker.speak(name);
-    } else {
       byeSpeaker.speak(name);
+    } else {
+      helloSpeaker.speak(name);
     }
   }
 
