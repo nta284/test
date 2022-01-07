@@ -1,0 +1,422 @@
+body {
+    font-size: 16px;
+    color: #fff;
+    background-color: #61122f;
+    font-family: 'Oxygen', sans-serif;
+}
+
+/********** HEADER **********/
+
+#navbar {
+    background-color: #f6b319;
+    border-radius: 0;
+    border: 0;
+}
+
+#logo-img {
+    background: url("../images/restaurant-logo_large.png") no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 10px 15px 10px 0;
+}
+
+.navbar-brand {
+    padding-top: 25px;
+}
+.navbar-brand h1 {
+    font-family: 'Lora', serif;
+    color: #557c3e;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #222;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 0.75;
+}
+.navbar-brand a:hover,
+.navbar-brand a:focus {
+    text-decoration: none;
+}
+.navbar-brand div {
+    color: #000;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    margin-top: 15px;
+}
+.navbar-brand div span {
+    vertical-align: middle;
+}
+
+#nav-list {
+    margin-top: 8px;
+}
+#nav-list a {
+    color: #951C49;
+    text-align: center;
+}
+#nav-list a:hover {
+    background-color: #e7e7e7;
+}
+#nav-list a span {
+    font-size: 1.8em;
+}
+
+#phone {
+    margin-top: 5px;
+}
+#phone a {
+    text-align: right;
+    /* padding-bottom: 0; */
+}
+#phone div {
+    color: #557c3e;
+}
+
+.navbar-header button.navbar-toggle, 
+.navbar-header .icon-bar {
+    border: 1px solid #61122f;
+}
+.navbar-header button.navbar-toggle {
+    clear: both;
+    margin-top: -30px;
+}
+
+/* Large devices */
+@media (min-width: 1200px) {
+    
+}
+
+/* Medium devices */
+@media (min-width: 992px) and (max-width: 1199px) {
+    #logo-img {
+        background: url("../images/restaurant-logo_medium.png") no-repeat;
+        width: 100px;
+        height: 100px;
+        margin: 5px 5px 5px 0;
+    }
+}
+
+/* Small devices */
+@media (min-width: 768px) and (max-width: 991px) {
+    
+}
+
+/* Exta small devices */
+@media (max-width: 767px) {
+    .navbar-brand {
+        padding-top: 10px;
+        height: 80px;
+    }
+    .navbar-brand h1 {
+        padding-top: 10px;
+        font-size: 5vw;
+    }
+    .navbar-brand div {
+        font-size: 0.6em;
+        margin-top: 12px;
+    }
+    .navbar-brand div img {
+        height: 20px;
+    }
+
+    #nav-list a {
+        font-size: 1.2em;
+    }
+    #nav-list a span {
+        font-size: inherit;
+        margin-right: 5px;
+    }
+
+    #phone-xs a {
+        font-size: 1.5em;
+        display: block;
+        margin: 0 20px;
+        padding: 10px;
+        border: 2px solid #fff;
+        background-color: #f6b319;
+        color: #951c49;
+    }
+    #phone-xs a span {
+        margin-right: 5px;
+    }
+    #deliver-xs {
+        margin-top: 5px;
+        font-size: .7em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+    }
+}
+
+/* FOR SUPER EXTRA SMALL DEVICES */
+@media (max-width: 479px) {
+    .navbar-brand h1 {
+        padding-top: 5px;
+        font-size: 6vw;
+    }
+}
+
+/********** END HEADER **********/
+
+
+/********** HOME PAGE **********/
+
+#menu-tile, #specials-tile, #map-tile {
+    height: 250px;
+    width: 100%;
+    position: relative;
+    border: 2px solid #3F0C1F;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover {
+    box-shadow: 0 1px 5px 1px #cccccc;
+}
+#menu-tile span, #specials-tile span, #map-tile span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #000;
+    opacity: 0.8;
+}
+
+#menu-tile {
+    background: url(../images/menu-tile.jpg) no-repeat;
+    background-position: center;
+}
+
+#specials-tile {
+    background: url(../images/specials-tile.jpg) no-repeat;
+    background-position: center;
+}
+
+/* Large devices */
+@media (min-width: 1200px) {
+    .container .jumbotron {
+        background: url("../images/jumbotron_1200.jpg") no-repeat;
+        height: 675px;
+        box-shadow: 0 0 5px #3f0c1f;
+        border: 2px solid #3f0c1f;
+    }
+}
+
+/* Medium devices */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container .jumbotron {
+        background: url("../images/jumbotron_992.jpg") no-repeat;
+        height: 558px;
+        box-shadow: 0 0 5px #3f0c1f;
+        border: 2px solid #3f0c1f;
+    }
+}
+
+/* Small devices */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container .jumbotron {
+        background: url("../images/jumbotron_768.jpg") no-repeat;
+        height: 432px;
+        box-shadow: 0 0 5px #3f0c1f;
+        border: 2px solid #3f0c1f;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 767px) {
+    .container .jumbotron {
+        margin: 30px;
+        padding: 0;
+        box-shadow: 0 0 5px #3f0c1f;
+    }
+
+    #menu-tile, #specials-tile {
+        width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* FOR SUPER EXTRA SMALL DEVICES */
+@media (max-width: 479px) {
+    #menu-tile, #specials-tile {
+        width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/********** END HOME PAGE **********/
+
+
+/********** FOOTER **********/
+
+.footer {
+    margin-top: 25px;
+    background-color: #222;
+    border: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.footer .row {
+    margin-bottom: 30px;
+}
+
+#hours, #address {
+    line-height: 2;
+}
+#hours span, #address span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#address p {
+    color: #557c3e;
+}
+
+#testimonials {
+    font-style: italic;
+    line-height: 1.8em;
+}
+#testimonials p:nth-child(2) {
+    margin-top: 20px;
+}
+
+/* Extra small devices */
+@media (max-width: 767px) {
+    .row > div {
+        text-align: center;
+    }
+
+    .row hr {
+        /* width: 75%; */
+        opacity: 0.5;
+    }
+
+    .footer .row {
+        margin-bottom: 0;
+    }
+}
+
+/********** END OF FOOTER **********/
+
+
+
+/********** MENU CATEGORIES **********/
+
+.single-category {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #3F0C1F;
+    overflow: hidden;
+    margin: 0 auto 40px;
+}
+.single-category span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    background-color: #000;
+    color: #fff;
+    opacity: 0.8;
+}
+.single-category:hover {
+    box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+#menu-categories-title {
+    margin-bottom: 50px;
+}
+
+/* FOR SUPER EXTRA SMALL DEVICES */
+@media (max-width: 479px) {
+    .col-xxs-12 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        float: left;
+        width: 100%;
+    }
+}
+
+/********** END OF MENU CATEGORIES **********/
+
+
+
+/********** SINGLE CATEGORY **********/
+
+.menu-item {
+    margin-bottom: 40px;
+}
+.menu-item-img {
+    position: relative;
+    border: 2px solid #61122f;
+    max-width: 250px;
+}
+.menu-item-img-code {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #557c3e;
+    text-align: center;
+    line-height: 30px;
+    bottom: -15px;
+    right: -15px;
+}
+.menu-item-price {
+    font-size: 1.1em;
+    text-align: right;
+    margin-top: 10px;
+}
+.menu-item-price span {
+    font-size: 0.6em;
+}
+
+.menu-item-description {
+    padding-right: 30px;
+}
+.menu-item-title {
+    margin: 0;
+}
+.menu-item-details {
+    font-size: 0.9em;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.menu-item .row {
+    margin-top: 50px;
+}
+
+/* Small devices */
+@media (min-width: 768px) and (max-width: 991px) {
+    .menu-item-price {
+        margin-right: 30px;
+        margin-top: 10px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 767px) {
+    .menu-item-img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .menu-item-price {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+/********** END OF SINGLE CATEGORY **********/

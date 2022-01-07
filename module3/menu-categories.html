@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurent</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav id="navbar" class="navbar navbar-default">
+            <div class="container">
+
+                <!-- navbar-header is for the parts that is still displayed when on mobile mode -->
+                <div class="navbar-header">
+                    <a href="index.html" class="pull-left visible-md visible-lg">  <!-- float left, only visible on md and lg size -->
+                        <div id="logo-img" alt="Logo Image"></div>
+                    </a>
+
+                    <!-- The name of the restaurent -->
+                    <div class="navbar-brand">
+                        <a href="index.html"><h1>My Awesome Restaurent</h1></a>
+                        <div>
+                            <img src="./images/star-k-logo.png" alt="Star">
+                            <span>Good Certified</span>
+                        </div>
+                    </div>
+
+                    <!-- The navbar toggle button, only displayed in mobile mode -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsible-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- This is for the parts that is collapsed when on mobile mode -->
+                <div id="collapsible-nav" class="collapse navbar-collapse">
+                    <ul id="nav-list" class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="menu-categories.html">
+                                <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs">Menu
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs">About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs">Awards
+                            </a>
+                        </li>
+                        <li id="phone" class="hidden-xs">
+                            <a href="tel:0974868628">
+                                <span>0974-868-628</span>
+                                <div>* We deliver</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div id="phone-xs">
+        <div id="call-btn" class="visible-xs">
+            <a class="btn" href="tel:0974868628">
+                <span class="glyphicon glyphicon-earphone"></span>0974-868-628
+            </a>
+        </div>
+        <div id="deliver-xs" class="text-center visible-xs">* We Deliver</div>
+    </div>
+    
+
+    <div id="main-content" class="container">
+        <h2 id="menu-categories-title" class="text-center">Menu Categories</h2>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                <a href="single-category.html">
+                    <div class="single-category">
+                        <img width="200" height="200" src="./images/menu/A/A.jpg" alt="Soup">
+                        <span>Soup</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                <a href="single-category.html">
+                    <div class="single-category">
+                        <img width="200" height="200" src="./images/menu/CSR/CSR.jpg" alt="Sushi">
+                        <span>Sushi</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                <a href="single-category.html">
+                    <div class="single-category">
+                        <img width="200" height="200" src="./images/menu/Dk/Dk.jpg" alt="Duck">
+                        <span>Duck</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                <a href="single-category.html">
+                    <div class="single-category">
+                        <img width="200" height="200" src="./images/menu/SO/SO.jpg" alt="Lunch">
+                        <span>Lunch</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                <a href="single-category.html">
+                    <div class="single-category">
+                        <img width="200" height="200" src="./images/menu/DS/DS.jpg" alt="Cake">
+                        <span>Cake</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                <a href="single-category.html">
+                    <div class="single-category">
+                        <img width="200" height="200" src="./images/menu/Vg/Vg.jpg" alt="Vegetables">
+                        <span>Vegetables</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                <a href="single-category.html">
+                    <div class="single-category">
+                        <img width="200" height="200" src="./images/menu/Pf/Pf.jpg" alt="Noodle">
+                        <span>Noodle</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer panel-footer">
+        <div class="container">
+            <div class="row">
+                <div id="hours" class="col-sm-4">
+                    <span>Hours:</span><br>
+                    Mon-Thurs: 9:00am - 9:00am<br>
+                    Sat-Sun: 8:00am - 10:30pm<br>
+                    Friday Closed
+                    <hr class="visible-xs">
+                </div>
+                <div id="address" class="col-sm-4">
+                    <span>Address:</span><br>
+                    48 Le Van Luong Street<br>
+                    Thanh Xuan, HN
+                    <p>* Freeship within 5km, with minimum order of 100.000VND</p>
+                    <hr class="visible-xs">
+                </div>
+                <div id="testimonials" class="col-sm-4">
+                    <p>"The best in Ha Noi I've ever been to!"</p>
+                    <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+                    <hr class="visible-xs">
+                </div>
+            </div>
+
+            <div class="text-center">&copy; Copyright My Awesome Restaurent</div>
+        </div>
+    </footer>
+
+
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
