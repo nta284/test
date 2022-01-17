@@ -8,6 +8,8 @@
     --blue-color: rgb(102, 102, 255);
     --hover-red-color: rgb(255, 193, 193);
     --hover-blue-color: rgb(198, 198, 255);
+
+    --footer-text-color: rgba(120, 120, 120, 0.7);
 }
 
 * {
@@ -175,7 +177,7 @@ body {
 .menu_title {
     height: 150px;
     width: 500px;
-    margin: 10px auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -198,7 +200,7 @@ body {
     color: var(--blue-color);
 }
 
-.menu_text {
+.menu_heading {
     color: #333;
     font-weight: 400;
     font-size: 3.75rem;
@@ -247,7 +249,6 @@ body {
 
     font-size: 1.2rem;
     font-weight: 400;
-    /* letter-spacing: 1px; */
     padding: 0;
     padding-bottom: 1.5px;
 
@@ -256,15 +257,72 @@ body {
     transition: 0.2s ease-out;
 }
 
-.d-none {
-    display: none;
-    transition: 0.3s ease-out;
-}
-
 .red-text {
     color: var(--red-color);
 }
 
 .blue-text {
     color: var(--blue-color);
+}
+
+
+.footer {
+    height: 120px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: var(--footer-text-color);
+    font-size: 0.9rem;
+}
+
+hr {
+    width: 80%;
+    height: 1px;
+    border: none;
+    background-color: rgb(220, 220, 220);
+}
+
+.footer_myname {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.footer_myname_text {
+    margin: 0 10px;
+}
+
+
+.footer_contacts {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.footer_myname_icon {
+    margin-top: 1px;
+}
+
+.footer_link {
+    text-decoration: none;
+    width: 32px;
+}
+
+.footer_link_icon {
+    background-color: var(--footer-text-color);
+    width: 32px;
+    color: #fff;
+    font-size: 15px;
+    padding: 8px;
+    text-align: center;
+    margin: 0 10px;
+    border-radius: 50%;
+}
+
+.footer_contact_text {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 3px;
 }
