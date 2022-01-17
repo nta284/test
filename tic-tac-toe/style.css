@@ -208,6 +208,13 @@ body {
     padding-bottom: 5px;
 }
 
+.menu_description {
+    color: #333;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 90px;
+}
+
 .btn {
     border: none;
     border-radius: 22px;
@@ -255,6 +262,29 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: 0.2s ease-out;
+}
+
+.circle-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% !important;
+    font-size: 18px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+#home-btn {
+    top: 15px;
+    left: 18px;
+    padding-bottom: 4px;
+}
+
+#replay-btn {
+    top: 15px;
+    left: 76px;
+    padding-bottom: 2px;
 }
 
 .red-text {

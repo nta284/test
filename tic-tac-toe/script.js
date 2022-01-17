@@ -5,6 +5,8 @@ const menu = document.querySelector(".menu");
 const board = document.querySelector(".board");
 const startBtn = document.querySelector("#start-btn");
 const restartBtn = document.querySelector("#restart-btn");
+const homeBtn = document.querySelector("#home-btn");
+const replayBtn = document.querySelector("#replay-btn");
 const headerText = document.querySelector(".header_text");
 const boardMask = document.querySelector(".board-mask");
 
@@ -37,6 +39,58 @@ var winningConditions = [
     [2, 4, 6]
 ]
 
+
+startBtn.addEventListener('click', start);
+
+restartBtn.addEventListener('click', reset);
+replayBtn.addEventListener('click', reset);
+
+homeBtn.addEventListener('click', start);
+homeBtn.addEventListener('click', reset);
+
+function start() {
+    menuToggle();
+
+    updateHeaderText();
+    squareHover(currentTurn);
+}
+
+function menuToggle() {
+    if (!menuCollapse){
+        setTimeout(() => {
+            menu.style.transform = "translateY(100%)";
+            menu.style.opacity = "0";
+        }, 50);
+        
+        startBtn.style.visibility = "hidden";
+        startBtn.style.opacity = "0";
+
+        replayBtn.style.visibility = "visible";
+        replayBtn.style.opacity = "1";
+        homeBtn.style.visibility = "visible";
+        homeBtn.style.opacity = "1";
+
+        board.style.visibility = "visible";
+    }
+    else {
+        menu.style.transform = "translateY(0%)";
+        menu.style.opacity = "1";
+        
+        setTimeout(() => {
+            startBtn.style.visibility = "visible";
+            startBtn.style.opacity = "1";
+        }, 700);
+
+        replayBtn.style.visibility = "hidden";
+        replayBtn.style.opacity = "0";
+        homeBtn.style.visibility = "hidden";
+        homeBtn.style.opacity = "0";
+
+        board.style.visibility = "hidden";
+    }
+
+    menuCollapse = !menuCollapse;
+}
 
 function reset() {
     for (var square of squares) {
@@ -75,36 +129,10 @@ function reset() {
 }
 
 
-startBtn.addEventListener('click', () => {
-    if (!menuCollapse){
-        menu.style.transform = "translateY(100%)";
-        menu.style.opacity = "0";
-        
-        startBtn.style.visibility = "hidden";
-        startBtn.style.opacity = "0";
-
-        board.style.visibility = "visible";
-    }
-    else {
-        menu.style.transform = "translateY(0%)";
-        menu.style.opacity = "1";
-        
-        startBtn.style.opacity = "1";
-
-        board.style.visibility = "hidden";
-    }
-
-    menuCollapse = !menuCollapse;
-
-    updateHeaderText();
-    squareHover(currentTurn);
-});
-
-restartBtn.addEventListener('click', reset);
-
 squares.forEach( (square) => {
     square.addEventListener('click', squareClick, { once: true });
 });
+
 
 // Call when a square is clicked
 function squareClick() {
@@ -227,6 +255,9 @@ function updateHeaderText() {
         else {
             headerText.innerHTML = 'Draw!';
         }
+    }
+    else {
+        headerText.innerHTML = "Let's play some Tic Tac Toe ...";
     }
 }
 
