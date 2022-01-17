@@ -1,4 +1,5 @@
-
+document.addEventListener("DOMContentLoaded", () => {
+    
 var menuCollapse = false;
 
 const menu = document.querySelector(".menu");
@@ -285,3 +286,5 @@ function squareHover(element) {
     element.classList.remove("red-hover");
     element.classList.remove("blue-hover");
 }
+
+});
