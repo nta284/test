@@ -59,7 +59,7 @@ function start() {
     menuToggle();
 
     updateHeaderText();
-    squareHover(currentTurn);
+    squareHover();
 }
 
 function menuToggle() {
@@ -132,7 +132,7 @@ function reset() {
     squaresStatus = ['', '', '', '', '', '', '', '', ''];
 
     updateHeaderText();
-    squareHover(currentTurn);
+    squareHover();
 }
 
 
@@ -289,11 +289,8 @@ function squareHover(element) {
     });
 
     // Remove hover effect from this square because it's clicked
-    console.log(element);
-    if (element.classList.contains("red-hover")) {
+    if (element != undefined) {
         element.classList.remove("red-hover");
-    }
-    else if (element.classList.contains("blue-hover")){
         element.classList.remove("blue-hover");
     }
 }
