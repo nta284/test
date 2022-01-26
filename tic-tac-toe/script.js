@@ -23,7 +23,7 @@ var winningStatus = 'none';
 
 var randomNum = Math.floor(Math.random() * 2);
 
-var currentTurn = player[0];
+var currentTurn = player[randomNum];
 
 const squares = document.querySelectorAll(".square");
 
@@ -125,7 +125,7 @@ function reset() {
     
     randomNum = Math.floor(Math.random() * 2);
     
-    currentTurn = player[0];
+    currentTurn = player[randomNum];
 
     unclickedSquares = [...squares];
 
