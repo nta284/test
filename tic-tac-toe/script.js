@@ -153,7 +153,7 @@ function squareClick() {
 
     // Swap turn
     turnCount ++;
-    currentTurn = player[(turnCount + 0) % 2];
+    currentTurn = player[(turnCount + randomNum) % 2];
 
     updateHeaderText();
     squareHover(this);
@@ -289,6 +289,7 @@ function squareHover(element) {
     });
 
     // Remove hover effect from this square because it's clicked
+    console.log(element);
     if (element.classList.contains("red-hover")) {
         element.classList.remove("red-hover");
     }
