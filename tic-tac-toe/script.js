@@ -289,8 +289,12 @@ function squareHover(element) {
     });
 
     // Remove hover effect from this square because it's clicked
-    element.classList.remove("red-hover");
-    element.classList.remove("blue-hover");
+    if (element.classList.contains("red-hover")) {
+        element.classList.remove("red-hover");
+    }
+    else if (element.classList.contains("blue-hover")){
+        element.classList.remove("blue-hover");
+    }
 }
 
 });
