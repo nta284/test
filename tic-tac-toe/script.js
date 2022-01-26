@@ -23,7 +23,7 @@ var winningStatus = 'none';
 
 var randomNum = Math.floor(Math.random() * 2);
 
-var currentTurn = player[randomNum];
+var currentTurn = player[0];
 
 const squares = document.querySelectorAll(".square");
 
@@ -67,7 +67,7 @@ function menuToggle() {
         setTimeout(() => {
             menu.style.transform = "translateY(100%)";
             menu.style.opacity = "0";
-        }, 50);
+        }, 150);
         
         startBtn.style.visibility = "hidden";
         startBtn.style.opacity = "0";
@@ -125,7 +125,7 @@ function reset() {
     
     randomNum = Math.floor(Math.random() * 2);
     
-    currentTurn = player[randomNum];
+    currentTurn = player[0];
 
     unclickedSquares = [...squares];
 
@@ -153,7 +153,7 @@ function squareClick() {
 
     // Swap turn
     turnCount ++;
-    currentTurn = player[(turnCount + randomNum) % 2];
+    currentTurn = player[(turnCount + 0) % 2];
 
     updateHeaderText();
     squareHover(this);
