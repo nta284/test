@@ -58,7 +58,7 @@ homeBtn.addEventListener('click', reset);
 function start() {
     menuToggle();
 
-    updateHeaderText();
+    headerText.innerHTML = updateHeaderText();
     squareHover();
 }
 
@@ -131,7 +131,7 @@ function reset() {
 
     squaresStatus = ['', '', '', '', '', '', '', '', ''];
 
-    updateHeaderText();
+    headerText.innerHTML = updateHeaderText();
     squareHover();
 }
 
@@ -155,7 +155,7 @@ function squareClick() {
     turnCount ++;
     currentTurn = player[(turnCount + randomNum) % 2];
 
-    updateHeaderText();
+    headerText.innerHTML = updateHeaderText();
     squareHover(this);
 }
 
@@ -247,24 +247,24 @@ function updateHeaderText() {
     if (menuCollapse) {
         if (resultCheck() == 'none') {
             if (currentTurn == 'red') {
-                headerText.innerHTML = 'It\'s player <span class="red-text">RED</span> turn';
+                return 'It\'s player <span class="red-text">RED</span> turn';
             }
             else {
-                headerText.innerHTML = 'It\'s player <span class="blue-text">BLUE</span> turn';
+                return 'It\'s player <span class="blue-text">BLUE</span> turn';
             }
         }
         else if (resultCheck() == 'red') {
-            headerText.innerHTML = 'Player <span class="red-text">RED</span> wins';
+            return 'Player <span class="red-text">RED</span> wins';
         }
         else if (resultCheck() == 'blue'){
-            headerText.innerHTML = 'Player <span class="blue-text">BLUE</span> wins';
+            return 'Player <span class="blue-text">BLUE</span> wins';
         }
         else {
-            headerText.innerHTML = 'Draw!';
+            return 'Draw!';
         }
     }
     else {
-        headerText.innerHTML = "Let's play some Tic Tac Toe ...";
+        return "Let's play some Tic Tac Toe ...";
     }
 }
 
@@ -283,15 +283,13 @@ function squareHover(element) {
             }
         }
         else {
-            square.classList.remove("red-hover");
-            square.classList.remove("blue-hover");
+            square.classList.remove("red-hover", "blue-hover");
         }
     });
 
     // Remove hover effect from this square because it's clicked
     if (element != undefined) {
-        element.classList.remove("red-hover");
-        element.classList.remove("blue-hover");
+        element.classList.remove("red-hover", "blue-hover");
     }
 }
 
