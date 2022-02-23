@@ -1,0 +1,218 @@
+
+.menu {
+    position: absolute;
+    top: 150px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: #fff;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    z-index: 1;
+
+    transform: translateY(0%);
+    opacity: 1;
+    transition: 0.8s ease-in-out;
+
+    #start-btn {
+        width: 150px;
+        height: 44px;
+        z-index: 2;
+    
+        position: absolute;
+        top: -22px;
+        left: 50%;
+        transform: translateX(-50%);
+    
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        line-height: 44px;
+    
+        visibility: visible;
+        opacity: 1;
+        transition: 0.4s ease-in-out;
+    }
+
+    &_title {
+        height: 150px;
+        width: 500px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .menu_icon.fa-times {
+            font-size: 5.5rem;
+            font-weight: 300;
+            color: $red-color;
+        }
+        
+        .menu_icon.fa-circle {
+            font-size: 4rem;
+            font-weight: 500;
+            color: $blue-color;
+        }
+    }
+
+    &_heading {
+        color: #333;
+        font-weight: 400;
+        font-size: 3.75rem;
+        letter-spacing: 2px;
+        padding-bottom: 5px;
+    }
+
+    &_description {
+        display: block;
+    }
+    
+    &_body {
+        color: #333;
+
+        .menu_description {
+            text-align: center;
+            margin-top: -30px;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+        }
+
+        .mode-container { 
+            display: flex;
+            justify-content: space-evenly;
+            color: #666;
+        
+            .mode-border-wrap {
+                height: 225px;
+                width: 280px;
+                background: rgba(212, 212, 212, 0.5);
+                // background: linear-gradient(0deg, rgba(212, 212, 212, 0.5), rgba(212, 212, 212, 0.5));
+                border-radius: 15px;
+                // padding: 8px;
+                text-align: center;
+                
+                transition: 0.3s;
+                
+                .mode {
+                    height: calc(100% - 16px);
+                    background-color: #fff;
+                    border-radius: 7px;
+                    padding-top: 48px;
+                    margin: 8px;
+
+                    &-title {
+                        font-size: 2rem;
+                        padding-top: 5px;
+                    }
+
+                    &-difficulty {
+                        .mode-star {
+                            margin-top: 5px;
+                            color: rgb(255, 230, 0);
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    &-title--multiplayer {
+                        font-size: 2rem;
+                        padding-top: 18px;
+                    }
+                }
+
+                &.mode-hover:hover {
+                    height: 225px;
+                    width: 280px;
+                    background: rgba(177, 177, 177, 0.5);
+                    transform: scale(1.075);
+                    cursor: pointer;
+                }
+
+                &.mode-selected {
+                    height: 225px;
+                    width: 280px;
+                    transform: scale(1.05);
+                    cursor: initial;
+                }
+
+                #mode-mask-begginer,
+                #mode-mask-normal,
+                #mode-mask-impossible,
+                #mode-mask-multiplayer {
+                    position: absolute;
+                    height: 225px;
+                    width: 280px;
+                    border-radius: 15px;
+                    background: linear-gradient(-35deg, #ffd051, #ff4a13);
+                    opacity: 0;
+                    z-index: -1;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+
+    .footer {
+        color: $footer-text-color;
+        font-size: 0.9rem;
+        margin-top: 50px;
+
+        &::before {
+            content: '';
+            width: 80%;
+            height: 1px;
+            display: block;
+            position: relative;
+            bottom: 10px;
+            margin: 0 auto;
+            transform: scaleY(0.9);
+            opacity: 0.8;
+            background-color: rgb(220, 220, 220);
+        }
+
+        &_myname {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 6px;
+
+            span {
+                margin: 0 10px;
+            }
+
+            i {
+                margin-top: 1px;
+            }
+        }
+
+        &_contact_text {
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 3px;
+        }
+
+        &_contacts {
+            text-align: center;
+            margin-top: 8px;
+
+            &_link {
+                text-decoration: none;
+                width: 32px;
+
+                i {
+                    background-color: $footer-text-color;
+                    width: 32px;
+                    color: #fff;
+                    font-size: 15px;
+                    padding: 8px;
+                    text-align: center;
+                    margin: 0 10px;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,48 @@
+
+@import "./variables";
+@import "./mixins";
+
+* {
+    box-sizing: border-box;
+    font-family: inherit;
+    font-family: 'Oswald', sans-serif;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, rgb(0, 255, 166), rgb(0, 110, 255));
+    position: relative;
+    overflow: hidden;
+}
+
+.my-btn {
+    border: none;
+    border-radius: 22px;
+    background: linear-gradient(-45deg, #f4a75f, #e44b04);
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.red-text {
+    color: $red-color;
+}
+
+.blue-text {
+    color: $blue-color;
+}
+
+@import "./parts/header";
+@import "./parts/menu";
+@import "./parts/play";

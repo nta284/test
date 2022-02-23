@@ -1,0 +1,139 @@
+
+.play {
+    overflow: hidden;
+
+    .board {
+        width: $board-size;
+        height: $board-size;
+    
+        @include center();
+        @include flexCenter();
+        
+        border-radius: 5px;
+        padding: $board-padding;
+        
+        background-color: rgb(228, 228, 228);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    
+        visibility: hidden;
+        transition: 0.7s ease-in-out;
+    
+        &-container {
+            height: 388px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+    
+            .square {
+                width: $square-size;
+                height: $square-size;
+                background-color: #fff;
+                transition: 0.3s ease-out;
+                position: relative;
+            
+                @include flexCenter();
+    
+                &:nth-child(n+4) {
+                    margin-top: $board-padding;
+                }
+
+                &.red-hover:hover {
+                    background-color: $hover-red-color;
+                    cursor: pointer;
+                }
+                
+                &.blue-hover:hover {
+                    background-color: $hover-blue-color;
+                    cursor: pointer;
+                }
+            }
+        }
+    
+        &-mask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            filter: blur(5px);
+            
+            z-index: -1;
+            opacity: 0;
+            transition: 0.3s ease-out;
+        }
+    }
+
+    #restart-btn {
+        width: 120px;
+        height: 40px;
+    
+        position: absolute;
+        bottom: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+    
+        font-size: 1.1rem;
+        font-weight: 400;
+        padding: 0;
+        padding-bottom: 1.5px;
+    
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.2s ease-out;
+    }
+    
+    .circle-btn {
+        width: 45px;
+        height: 45px;
+        border-radius: 50% !important;
+        font-size: 18px;
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+    }
+    
+    #home-btn {
+        top: 15px;
+        left: 18px;
+        padding-bottom: 4px;
+    }
+    
+    #replay-btn {
+        top: 15px;
+        left: 76px;
+        padding-bottom: 2px;
+    }
+}
+
+.fa-circle.blue-mark {
+    font-size: 5rem;
+    font-weight: 500;
+    color: $blue-color;
+}
+
+.fa-slash {
+    position: absolute;
+    color: $red-color;
+    font-size: 3.9rem;
+}
+
+.sl1 {
+    transform: rotate(6.8deg);
+}
+
+.sl2 {
+    transform: rotate(96.8deg);
+}
+
+
+.blur {
+    filter: blur(2px);
+    transition: 0.3s ease-out;
+}
+
+.z-index-3 {
+    z-index: 3;
+}

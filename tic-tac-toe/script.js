@@ -6,8 +6,6 @@ $(document).ready(function () {
     });
 });
     
-var menuCollapse = false;
-
 const menu = document.querySelector(".menu");
 const board = document.querySelector(".board");
 const startBtn = document.querySelector("#start-btn");
@@ -16,6 +14,12 @@ const homeBtn = document.querySelector("#home-btn");
 const replayBtn = document.querySelector("#replay-btn");
 const headerText = document.querySelector(".header_text");
 const boardMask = document.querySelector(".board-mask");
+const modeWrappers = document.querySelectorAll(".mode-border-wrap");
+const modeMasks = document.querySelectorAll(".mode-mask");
+
+var mode = "multiplayer";
+
+var menuCollapse = false;
 
 const player = ['red', 'blue'];
 var turnCount = 0;
@@ -45,6 +49,30 @@ var winningConditions = [
     [0, 4, 8],
     [2, 4, 6]
 ]
+
+
+
+modeWrappers.forEach(modeWrapper => {
+    modeWrapper.addEventListener("click", modeChoosing);
+    modeWrapper.classList.add("mode-hover");
+})
+
+function modeChoosing() {
+    mode = this.id;
+    this.children[0].style.opacity = "1";
+    
+    modeWrappers.forEach(modeWrapper => {
+        if (modeWrapper != this) {
+            modeWrapper.children[0].style.opacity = "0";
+        }
+
+        modeWrapper.classList.remove("mode-selected");
+        modeWrapper.classList.add("mode-hover");
+    })
+
+    this.classList.remove("mode-hover");
+    this.classList.add("mode-selected");
+}
 
 
 startBtn.addEventListener('click', start);
