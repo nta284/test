@@ -318,9 +318,7 @@ function botImpossible() {
 }
 
 function unclickedSquaresIDs() {
-    return unclickedSquares.map(square => {
-        return parseInt(square.id[1]);
-    })
+    return unclickedSquares.map(square => parseInt(square.id[1]));
 }
 
 function checkTwoMarks(color) {
