@@ -112,6 +112,8 @@
     font-size: 5rem;
     font-weight: 500;
     color: $blue-color;
+    opacity: 0;
+    transition: 0.125s ease-out;
 }
 
 .fa-slash {
@@ -122,10 +124,14 @@
 
 .sl1 {
     transform: rotate(6.8deg);
+    opacity: 0;
+    transition: 0.08s ease-out;
 }
 
 .sl2 {
     transform: rotate(96.8deg);
+    opacity: 0;
+    transition: 0.08s ease-out;
 }
 
 

@@ -428,6 +428,9 @@ body {
   font-size: 5rem;
   font-weight: 500;
   color: #6666ff;
+  opacity: 0;
+  -webkit-transition: 0.125s ease-out;
+  transition: 0.125s ease-out;
 }
 
 .fa-slash {
@@ -439,11 +442,17 @@ body {
 .sl1 {
   -webkit-transform: rotate(6.8deg);
           transform: rotate(6.8deg);
+  opacity: 0;
+  -webkit-transition: 0.08s ease-out;
+  transition: 0.08s ease-out;
 }
 
 .sl2 {
   -webkit-transform: rotate(96.8deg);
           transform: rotate(96.8deg);
+  opacity: 0;
+  -webkit-transition: 0.08s ease-out;
+  transition: 0.08s ease-out;
 }
 
 .blur {

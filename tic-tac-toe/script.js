@@ -15,26 +15,41 @@ const replayBtn = document.querySelector("#replay-btn");
 const headerText = document.querySelector(".header_text");
 const boardMask = document.querySelector(".board-mask");
 const modeWrappers = document.querySelectorAll(".mode-border-wrap");
-const modeMasks = document.querySelectorAll(".mode-mask");
 
 var mode = "multiplayer";
+// var mode = "impossible";
 
-var menuCollapse = false;
+var isBotPlaying = false;
 
-const player = ['red', 'blue'];
+var menuCollapsed = false;
+
+const players = ['red', 'blue'];
 var turnCount = 0;
 var winningStatus = 'none';
 
 var randomNum = Math.floor(Math.random() * 2);
 
-var currentTurn = player[randomNum];
+var currentTurn = players[0];
 
 const squares = document.querySelectorAll(".square");
 
 // Array of squares that hasn't been clicked
 var unclickedSquares = [...squares];
+var clickedSquares = [];
 
 var squaresStatus = ['', '', '', '', '', '', '', '', ''];
+
+var status = [
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', '']
+]
+
+var position = {
+    center: 4,
+    edges: [1, 3, 5, 7],
+    corners: [0, 2, 6, 8]
+}
 
 // 0 1 2
 // 3 4 5
@@ -50,6 +65,11 @@ var winningConditions = [
     [2, 4, 6]
 ]
 
+Array.prototype.shuffle = function() {
+    return this.sort(() => {
+        return Math.random() - 0.5;
+    });
+}
 
 
 modeWrappers.forEach(modeWrapper => {
@@ -76,6 +96,7 @@ function modeChoosing() {
 
 
 startBtn.addEventListener('click', start);
+// start()
 
 restartBtn.addEventListener('click', reset);
 replayBtn.addEventListener('click', reset);
@@ -90,8 +111,9 @@ function start() {
     squareHover();
 }
 
+// Swipe menu down and up
 function menuToggle() {
-    if (!menuCollapse){
+    if (!menuCollapsed){
         setTimeout(() => {
             menu.style.transform = "translateY(100%)";
             menu.style.opacity = "0";
@@ -124,67 +146,223 @@ function menuToggle() {
         board.style.visibility = "hidden";
     }
 
-    menuCollapse = !menuCollapse;
+    menuCollapsed = !menuCollapsed;
 }
 
 function reset() {
-    for (var square of squares) {
+
+    // remove the marks and the blur effect when winning
+    for (let square of squares) {
         square.innerHTML = '';
         removeClassFromChildrens(square, 'z-index-3');
         removeClassFromChildrens(square, 'blur');
     }
 
+    // reset the click event of the squares
     squares.forEach( (square) => {
-        square.removeEventListener('click', squareClick);
+        square.removeEventListener('click', play);
+    });
+    squares.forEach( (square) => {
+        square.addEventListener('click', play, { once: true });
     });
 
-    squares.forEach( (square) => {
-        square.addEventListener('click', squareClick, { once: true });
-    });
-
+    // hide the board mask when winning
     boardMask.style.zIndex = '-1';
     boardMask.style.opacity = '0';
 
+    // hide the restart button when winning
     restartBtn.style.visibility = 'hidden';
     restartBtn.style.opacity = '0';
 
+    // reset the turn and the status
     turnCount = 0;
     winningStatus = 'none';
     
     randomNum = Math.floor(Math.random() * 2);
     
-    currentTurn = player[randomNum];
+    currentTurn = players[0];
 
     unclickedSquares = [...squares];
 
     squaresStatus = ['', '', '', '', '', '', '', '', ''];
+
+    status = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ]
+
 
     headerText.innerHTML = updateHeaderText();
     squareHover();
 }
 
 
-squares.forEach( (square) => {
-    square.addEventListener('click', squareClick, { once: true });
+squares.forEach(square => {
+    square.addEventListener('click', play, { once: true });
 });
+
+function play() {
+    squareClick(this);
+    // console.log(winningStatus);
+
+    if (mode != 'multiplayer') {
+        unclickedSquares.forEach(square => {
+            square.removeEventListener('click', play);
+        });
+        isBotPlaying = true;
+        squareHover();
+        
+        setTimeout(() => {
+            if (winningStatus == 'none') {
+                botPlay();
+            }
+            // console.log(winningStatus);
+
+            unclickedSquares.forEach(square => {
+                square.addEventListener('click', play, { once: true });
+            });
+            isBotPlaying = false;
+            squareHover();
+        }, 500);
+    }
+}
+
+function botPlay() {
+    if (mode == 'begginer') {
+        botBeginner();
+    }
+    else if (mode == 'normal') {
+        botNormal();
+    }
+    else if (mode == 'impossible') {
+        botImpossible();
+    }
+}
+
+// Pick a random square from an array of squares
+function randomSquareFrom(squareArray) {
+    return squareArray[Math.floor(Math.random() * squareArray.length)];
+}
+
+// Return an array of the unclicked squares that is in the position 
+function positionFilter(pos) {
+    let filtered = [];
+
+    if (typeof pos == 'object') {
+        for (let p of pos) {
+            filtered = filtered.concat(unclickedSquares.filter(square => {
+                return position[p].includes(parseInt(square.id[1]));
+            })) 
+        }
+    }
+    else {
+        filtered = unclickedSquares.filter(square => {
+            return position[pos].includes(parseInt(square.id[1]));
+        })
+    }
+    return filtered;
+}
+
+function botBeginner() {
+    squareClick(randomSquareFrom(unclickedSquares));
+}
+
+function botNormal() {
+    if (turnCount == 1) {
+        if (status[1][1] == 'red') {
+            console.log("First move: Opponent played center!");
+            squareClick(randomSquareFrom(positionFilter('edges')));
+        }
+        else {
+            console.log("First move: Opponent did not play center!");
+            squareClick(randomSquareFrom(positionFilter(['edges', 'corners'])));
+        }
+    }
+    else {
+        if (checkTwoMarks('blue') != 'none') {
+            console.log("Detect winning move!");
+            squareClick(squares[checkTwoMarks('blue')]);
+        }
+        else if (checkTwoMarks('red') != 'none') {
+            console.log("Detect losing move!");
+            squareClick(squares[checkTwoMarks('red')]);
+        }
+        else {
+            console.log("Random!");
+            squareClick(randomSquareFrom(unclickedSquares));
+        }
+    }
+}
+
+function botImpossible() {
+    if (turnCount == 1) {
+        if (status[1][1] == '') {
+            squareClick(squares[position.center]);
+        }
+        else {
+            squareClick(randomSquareFrom(positionFilter('corners')));
+        }
+    }
+    else {
+        if (checkTwoMarks('blue') != 'none') {
+            squareClick(squares[checkTwoMarks('blue')]);
+        }
+        else if (checkTwoMarks('red') != 'none') {
+            squareClick(squares[checkTwoMarks('red')]);
+        }
+        else {
+            squareClick(randomSquareFrom(unclickedSquares));
+        }
+    }
+}
+
+function unclickedSquaresIDs() {
+    return unclickedSquares.map(square => {
+        return parseInt(square.id[1]);
+    })
+}
+
+function checkTwoMarks(color) {
+
+    for (let condition of winningConditions.shuffle()) {
+        if (squaresStatus[condition[0]] == squaresStatus[condition[1]] && squaresStatus[condition[0]] == color) {
+            if (unclickedSquaresIDs().includes(condition[2])) {
+                return condition[2];
+            }
+        }
+        else if (squaresStatus[condition[0]] == squaresStatus[condition[2]] && squaresStatus[condition[0]] == color) {
+            if (unclickedSquaresIDs().includes(condition[1])) {
+                return condition[1];
+            }
+        }
+        else if (squaresStatus[condition[1]] == squaresStatus[condition[2]] && squaresStatus[condition[1]] == color) {
+            if (unclickedSquaresIDs().includes(condition[0])) {
+                return condition[0];
+            }
+        }
+    }
+    return 'none';
+}
 
 
 // Call when a square is clicked
-function squareClick() {
-    insertMark(this);
-    updateSquareStatus(this.id);
+function squareClick(thisSquare) {
+    insertMark(thisSquare);
+    updateSquareStatus(thisSquare.id[1]);
 
     // Remove this square from the unclicked array
-    unclickedSquares.splice(unclickedSquares.indexOf(this), 1);
+    unclickedSquares.splice(unclickedSquares.indexOf(thisSquare), 1);
 
     resultCheck();
 
     // Swap turn
     turnCount ++;
-    currentTurn = player[(turnCount + randomNum) % 2];
+    // currentTurn = players[(turnCount + 0) % 2];
+    currentTurn = players[turnCount % 2];
 
     headerText.innerHTML = updateHeaderText();
-    squareHover(this);
+    squareHover(thisSquare);
 }
 
 
@@ -192,16 +370,25 @@ function squareClick() {
 function insertMark(element) {
     if (currentTurn == 'red') {
         element.innerHTML = '<i class="fas fa-slash sl1"></i><i class="fas fa-slash sl2"></i>';
+
+        setTimeout(() => {
+            element.childNodes[0].style.opacity = "1";
+            element.childNodes[1].style.opacity = "1";
+        }, 0);
     }
     else if (currentTurn == 'blue') {
         element.innerHTML = '<i class="blue-mark far fa-circle"></i>';
+
+        setTimeout(() => {
+            element.childNodes[0].style.opacity = "1";
+        }, 0);
     }
 }
 
 
 function updateSquareStatus(elementId) {
-    squaresStatus[elementId[1]] = currentTurn;
-    // console.log(squaresStatus);
+    status[Math.floor(elementId / 3)][elementId % 3] = currentTurn;
+    squaresStatus[elementId] = currentTurn;
 }
 
 
@@ -209,8 +396,8 @@ function resultCheck() {
     if (unclickedSquares.length == 0) {
         winningStatus = 'draw';
     }
-
-    for (var condition of winningConditions) {
+    
+    for (let condition of winningConditions) {
         if ((squaresStatus[condition[0]] == squaresStatus[condition[1]]) && 
             (squaresStatus[condition[1]] == squaresStatus[condition[2]]) && 
             (squaresStatus[condition[0]] != '')) {
@@ -223,13 +410,10 @@ function resultCheck() {
         }
     }
 
-    if (winningStatus == 'red' || winningStatus == 'blue') {
-        squares.forEach((square) => {
-            square.removeEventListener('click', squareClick);
-        });
-    }
-
     if (winningStatus != 'none') {
+        squares.forEach((square) => {
+            square.removeEventListener('click', play);
+        });
         restartBtn.style.visibility = 'visible';
         restartBtn.style.opacity = '1';
     }
@@ -238,13 +422,13 @@ function resultCheck() {
 }
 
 function addClassToChildrens(element, classToAdd) {
-    for (var c = 0; c < element.childNodes.length; c ++) {
+    for (let c = 0; c < element.childNodes.length; c ++) {
         element.children[c].classList.add(classToAdd);
     }
 }
 
 function removeClassFromChildrens(element, classToRemove) {
-    for (var c = 0; c < element.childNodes.length; c ++) {
+    for (let c = 0; c < element.childNodes.length; c ++) {
         if (element.children[c].classList.contains(classToRemove)) {
             element.children[c].classList.remove(classToRemove);
         }
@@ -252,16 +436,16 @@ function removeClassFromChildrens(element, classToRemove) {
 }
 
 function win(condition) {
-    var remainingSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    let remainingSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     
-    for (var i of condition) {
+    for (let i of condition) {
         addClassToChildrens(squares[i], 'z-index-3');
-        remainingSquares = remainingSquares.filter((ele) => {
+        remainingSquares = remainingSquares.filter(ele => {
             return ele != i;
         }) 
     }
 
-    for (var s of remainingSquares) {
+    for (let s of remainingSquares) {
         addClassToChildrens(squares[s], 'blur');
     }
 
@@ -272,13 +456,13 @@ function win(condition) {
 
 // Update header text
 function updateHeaderText() {
-    if (menuCollapse) {
+    if (menuCollapsed) {
         if (resultCheck() == 'none') {
             if (currentTurn == 'red') {
-                return 'It\'s player <span class="red-text">RED</span> turn';
+                return "It's player <span class='red-text'>RED</span> turn";
             }
             else {
-                return 'It\'s player <span class="blue-text">BLUE</span> turn';
+                return "It's player <span class='blue-text'>BLUE</span> turn";
             }
         }
         else if (resultCheck() == 'red') {
@@ -297,10 +481,11 @@ function updateHeaderText() {
 }
 
 
-// Call when square is hovered, set hover color
+// Set the hover color to the squares
 function squareHover(element) {
-    unclickedSquares.forEach((square) => {
-        if (resultCheck() == 'none'){
+    // Add hover effect to the unclicked squares
+    unclickedSquares.forEach(square => {
+        if (resultCheck() != 'red' && resultCheck() != 'blue' && !isBotPlaying){
             if (currentTurn == 'red') {
                 square.classList.add("red-hover");
                 square.classList.remove("blue-hover");
