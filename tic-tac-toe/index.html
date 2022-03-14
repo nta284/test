@@ -13,29 +13,27 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="./styles/app.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
 </head>
 
 <body class="preload">
     <div class="main">
-
+        
         <div class="header">
             <div class="header_text">Let's play some Tic Tac Toe ...</div>
         </div>
-
+        
         <div class="menu">
-            <button id="start-btn" class="my-btn">START!</button>
+            <button disabled id="start-btn" class="my-btn">START!</button>
             <div class="menu_title">
                 <i class="menu_icon fas fa-times"></i>
                 <div class="menu_heading">TIC TAC TOE</div>
                 <i class="menu_icon far fa-circle"></i>
             </div>
             <div class="menu_body">
-                <div class="menu_description">Choose mode ...</div>
+                <div class="menu_description">Choose a mode to play ...</div>
                 <div class="container-fluid mode-container">
                     <!-- <div class="row"> -->
                         <div class="mode-border-wrap" id="begginer">
@@ -77,67 +75,68 @@
                                 <div class="mode-title--multiplayer">Multiplayer</div>
                             </div>
                         </div>
-                    <!-- </div> -->
+                        <!-- </div> -->
+                    </div>
                 </div>
+                <footer class="footer">
+                    <div class="footer_myname">
+                        <i class="fas fa-heart"></i>
+                        <span class="footer_myname_text">Made by Tuan Anh</span>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="footer_contact_text">
+                        Contacts
+                    </div>
+                    <div class="footer_contacts">
+                        <a href="#"" class="footer_contacts_link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="footer_contacts_link">
+                            <i class="fab fa-facebook-messenger"></i> 
+                        </a>
+                        <a href="#" class="footer_contacts_link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="footer_contacts_link">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="footer_contacts_link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </footer>
             </div>
-            <footer class="footer">
-                <div class="footer_myname">
-                    <i class="fas fa-heart"></i>
-                    <span class="footer_myname_text">Made by Tuan Anh</span>
-                    <i class="fas fa-heart"></i>
+            
+            <div class="play">
+                <div class="board" id="board">
+                    <!-- <i class="blue-mark far fa-circle"></i> -->
+                    <!-- <i class="fas fa-slash sl1"></i>
+                        <i class="fas fa-slash sl2"></i> -->
+                        <div class="board-container">
+                            <div class="square" id="s0"></div>
+                            <div class="square" id="s1"></div>
+                            <div class="square" id="s2"></div>
+                            <div class="square" id="s3"></div>
+                            <div class="square" id="s4"></div>
+                            <div class="square" id="s5"></div>
+                            <div class="square" id="s6"></div>
+                            <div class="square" id="s7"></div>
+                            <div class="square" id="s8"></div>
+                        </div>
+                        <div class="board-mask"></div>
+                    </div>
+                    
+                    <button id="home-btn" class="my-btn circle-btn" title="Home"><i class="fas fa-home"></i></button>
+                    <button id="replay-btn" class="my-btn circle-btn" title="Restart"><i class="fas fa-undo"></i></button>
+                    
+                    <button id="restart-btn" class="my-btn">RESTART</button>
                 </div>
-                <div class="footer_contact_text">
-                    Contacts
-                </div>
-                <div class="footer_contacts">
-                    <a href="#"" class="footer_contacts_link">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="footer_contacts_link">
-                        <i class="fab fa-facebook-messenger"></i> 
-                    </a>
-                    <a href="#" class="footer_contacts_link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="footer_contacts_link">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <a href="#" class="footer_contacts_link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </footer>
-        </div>
-        
-        <div class="play">
-            <div class="board" id="board">
-                <!-- <i class="blue-mark far fa-circle"></i> -->
-                <!-- <i class="fas fa-slash sl1"></i>
-                <i class="fas fa-slash sl2"></i> -->
-                <div class="board-container">
-                    <div class="square" id="s0"></div>
-                    <div class="square" id="s1"></div>
-                    <div class="square" id="s2"></div>
-                    <div class="square" id="s3"></div>
-                    <div class="square" id="s4"></div>
-                    <div class="square" id="s5"></div>
-                    <div class="square" id="s6"></div>
-                    <div class="square" id="s7"></div>
-                    <div class="square" id="s8"></div>
-                </div>
-                <div class="board-mask"></div>
+                
             </div>
-    
-            <button id="home-btn" class="my-btn circle-btn" title="Home"><i class="fas fa-home"></i></button>
-            <button id="replay-btn" class="my-btn circle-btn" title="Restart"><i class="fas fa-undo"></i></button>
-    
-            <button id="restart-btn" class="my-btn">RESTART</button>
-        </div>
-
-    </div>
-        
-    <a href="https://nta284.github.io/test/tic-tac-toe/" style="display: none;"></a>
+            
+            <a href="https://nta284.github.io/test/tic-tac-toe/" style="display: none;"></a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>

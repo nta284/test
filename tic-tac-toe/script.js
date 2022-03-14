@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
 
 $(document).ready(function () {
     $(".preload").each(function (index, element) {
@@ -17,7 +16,7 @@ const boardMask = document.querySelector(".board-mask");
 const modeWrappers = document.querySelectorAll(".mode-border-wrap");
 
 var mode = "multiplayer";
-// var mode = "impossible";
+var mode = "impossible";
 
 var isBotPlaying = false;
 
@@ -35,7 +34,6 @@ const squares = document.querySelectorAll(".square");
 
 // Array of squares that hasn't been clicked
 var unclickedSquares = [...squares];
-var clickedSquares = [];
 
 var squaresStatus = ['', '', '', '', '', '', '', '', ''];
 
@@ -65,6 +63,7 @@ var winningConditions = [
     [2, 4, 6]
 ]
 
+
 Array.prototype.shuffle = function() {
     return this.sort(() => {
         return Math.random() - 0.5;
@@ -78,7 +77,16 @@ modeWrappers.forEach(modeWrapper => {
 })
 
 function modeChoosing() {
+    startBtn.disabled = false;
     mode = this.id;
+    
+    if (mode == 'multiplayer') {
+        currentTurn = players[randomNum];
+    }
+    else {
+        currentTurn = players[0];
+    }
+
     this.children[0].style.opacity = "1";
     
     modeWrappers.forEach(modeWrapper => {
@@ -105,6 +113,7 @@ homeBtn.addEventListener('click', start);
 homeBtn.addEventListener('click', reset);
 
 function start() {
+    console.log(currentTurn);
     menuToggle();
 
     headerText.innerHTML = updateHeaderText();
@@ -180,7 +189,12 @@ function reset() {
     
     randomNum = Math.floor(Math.random() * 2);
     
-    currentTurn = players[0];
+    if (mode == 'multiplayer') {
+        currentTurn = players[randomNum];
+    }
+    else {
+        currentTurn = players[0];
+    }
 
     unclickedSquares = [...squares];
 
@@ -195,6 +209,7 @@ function reset() {
 
     headerText.innerHTML = updateHeaderText();
     squareHover();
+    console.clear();
 }
 
 
@@ -240,7 +255,7 @@ function botPlay() {
     }
 }
 
-// Pick a random square from an array of squares
+// Return a random square from an array of squares
 function randomSquareFrom(squareArray) {
     return squareArray[Math.floor(Math.random() * squareArray.length)];
 }
@@ -296,53 +311,115 @@ function botNormal() {
 }
 
 function botImpossible() {
-    if (turnCount == 1) {
-        if (status[1][1] == '') {
-            squareClick(squares[position.center]);
-        }
-        else {
-            squareClick(randomSquareFrom(positionFilter('corners')));
-        }
-    }
-    else {
-        if (checkTwoMarks('blue') != 'none') {
-            squareClick(squares[checkTwoMarks('blue')]);
-        }
-        else if (checkTwoMarks('red') != 'none') {
-            squareClick(squares[checkTwoMarks('red')]);
-        }
-        else {
-            squareClick(randomSquareFrom(unclickedSquares));
-        }
-    }
-}
-
-function unclickedSquaresIDs() {
-    return unclickedSquares.map(square => parseInt(square.id[1]));
+    bestMove();
 }
 
 function checkTwoMarks(color) {
-
     for (let condition of winningConditions.shuffle()) {
-        if (squaresStatus[condition[0]] == squaresStatus[condition[1]] && squaresStatus[condition[0]] == color) {
-            if (unclickedSquaresIDs().includes(condition[2])) {
-                return condition[2];
-            }
-        }
-        else if (squaresStatus[condition[0]] == squaresStatus[condition[2]] && squaresStatus[condition[0]] == color) {
-            if (unclickedSquaresIDs().includes(condition[1])) {
-                return condition[1];
-            }
-        }
-        else if (squaresStatus[condition[1]] == squaresStatus[condition[2]] && squaresStatus[condition[1]] == color) {
-            if (unclickedSquaresIDs().includes(condition[0])) {
-                return condition[0];
-            }
-        }
+        let colorCount = condition.filter(s => squaresStatus[s] == color).length;
+        let emptyCount = condition.filter(s => squaresStatus[s] == '').length;
+    
+        if (colorCount == 2 && emptyCount == 1) {
+            return condition.find(s => squaresStatus[s] == '');
+        }    
     }
+
     return 'none';
 }
 
+function bestMove() {
+    let bestScore = -Infinity;
+    // let bestMovesArray = [];
+    let nextMove;
+
+    for (let i = 0; i < 9; i ++) {
+        if (squaresStatus[i] == '') {
+            squaresStatus[i] = 'blue';
+
+            let score = minimax(squaresStatus, 0, false);
+
+            squaresStatus[i] = '';
+
+            if (score > bestScore) {
+                bestScore = score;
+                // bestMovesArray.push(i);
+                nextMove = i
+            }
+        }
+    }
+
+    // console.log(bestMovesArray);
+    // let nextMove = bestMovesArray[Math.floor(Math.random() * bestMovesArray.length)];
+    console.log(nextMove);
+    squareClick(squares[nextMove]);
+}
+
+function minimax(squaresStatus, depth, isMaximizing) {
+    let result = resultCheck2();
+    if (result == 'blue') {
+        return (10 - depth);
+    }
+    else if (result == 'red') {
+        return (depth - 10);
+    }
+    else if (result == 'draw') {
+        return 0;
+    }
+
+    if (isMaximizing) {
+        let bestScore = -Infinity;
+
+        for (let i = 0; i < 9; i ++) {
+            if (squaresStatus[i] == '') {
+                squaresStatus[i] = 'blue';
+
+                let score = minimax(squaresStatus, depth + 1, false);
+
+                squaresStatus[i] = '';
+
+                if (score > bestScore) {
+                    bestScore = score;
+                }
+            }    
+        }
+        return bestScore;
+    }
+    else {
+        let bestScore = Infinity;
+
+        for (let i = 0; i < 9; i ++) {
+            if (squaresStatus[i] == '') {
+                squaresStatus[i] = 'red';
+
+                let score = minimax(squaresStatus, depth + 1, true);
+
+                squaresStatus[i] = '';
+
+                if (score < bestScore) {
+                    bestScore = score;
+                }
+            }    
+        }
+        return bestScore;
+    }
+}
+
+function resultCheck2() {
+    for (let condition of winningConditions) {
+        if ((squaresStatus[condition[0]] == squaresStatus[condition[1]]) && 
+            (squaresStatus[condition[1]] == squaresStatus[condition[2]]) && 
+            (squaresStatus[condition[0]] != '')) {
+
+            return squaresStatus[condition[0]];
+        }
+    }
+
+    if (squaresStatus.filter(s => s == '').length == 0) {
+        return 'draw';
+    }
+    
+    return 'none';
+}
 
 // Call when a square is clicked
 function squareClick(thisSquare) {
@@ -388,6 +465,7 @@ function updateSquareStatus(elementId) {
     status[Math.floor(elementId / 3)][elementId % 3] = currentTurn;
     squaresStatus[elementId] = currentTurn;
 }
+
 
 
 function resultCheck() {
@@ -503,5 +581,3 @@ function squareHover(element) {
         element.classList.remove("red-hover", "blue-hover");
     }
 }
-
-});

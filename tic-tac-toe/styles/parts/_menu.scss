@@ -33,6 +33,11 @@
         visibility: visible;
         opacity: 1;
         transition: 0.4s ease-in-out;
+
+        &:disabled {
+            cursor: not-allowed;
+            filter: invert(0.1);
+        }
     }
 
     &_title {
@@ -152,67 +157,5 @@
         }
     }
 
-    .footer {
-        color: $footer-text-color;
-        font-size: 0.9rem;
-        margin-top: 50px;
-
-        &::before {
-            content: '';
-            width: 80%;
-            height: 1px;
-            display: block;
-            position: relative;
-            bottom: 10px;
-            margin: 0 auto;
-            transform: scaleY(0.9);
-            opacity: 0.8;
-            background-color: rgb(220, 220, 220);
-        }
-
-        &_myname {
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 6px;
-
-            span {
-                margin: 0 10px;
-            }
-
-            i {
-                margin-top: 1px;
-            }
-        }
-
-        &_contact_text {
-            text-align: center;
-            font-size: 1rem;
-            margin-top: 3px;
-        }
-
-        &_contacts {
-            text-align: center;
-            margin-top: 8px;
-
-            &_link {
-                text-decoration: none;
-                width: 32px;
-
-                i {
-                    background-color: $footer-text-color;
-                    width: 32px;
-                    color: #fff;
-                    font-size: 15px;
-                    padding: 8px;
-                    text-align: center;
-                    margin: 0 10px;
-                    border-radius: 50%;
-                }
-            }
-        }
-
-    }
-
+    @import './footer';
 }

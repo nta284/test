@@ -88,6 +88,12 @@ body {
   transition: 0.4s ease-in-out;
 }
 
+.menu #start-btn:disabled {
+  cursor: not-allowed;
+  -webkit-filter: invert(0.1);
+          filter: invert(0.1);
+}
+
 .menu_title {
   height: 150px;
   width: 500px;
