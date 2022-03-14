@@ -28,8 +28,6 @@ var winningStatus = 'none';
 
 var randomNum = Math.floor(Math.random() * 2);
 
-var currentTurn = players[0];
-
 const squares = document.querySelectorAll(".square");
 
 // Array of squares that hasn't been clicked
