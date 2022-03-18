@@ -1,0 +1,236 @@
+.container_booking {
+    .container_booking_mask {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(35, 42, 49, 0.92);
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s;
+    }
+    
+    .container_booking_wrapper {
+        position: relative;
+        // height: 200px;
+        background-color: #F7F9FA;
+        width: 1024px;
+        border-radius: 6px;
+        margin: -24px auto 0;
+        display: flex;
+        box-shadow: $box-shadow;
+        
+        .container_booking_categories {
+            width: 230px;
+            background-color: $hover-color;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            overflow-x: hidden;
+    
+            .container_booking_categories_item {
+                height: 32px;
+                padding: 8px 16px;
+                border-left-width: 2px;
+                border-left-style: solid;
+                border-color: transparent;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                
+                &:hover {
+                    background-color: #fff;
+                }
+                
+                &--active {
+                    background-color: #fff;
+                    border-color: #235D9F;
+                }
+    
+                img {
+                    width: 16px;
+                    margin-right: 8px;
+                }
+    
+                span {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    
+        .container_booking_expand-toggle {
+            width: 16px;
+            background-color: #F7F9FA;
+            cursor: pointer;
+            @include flexCenter();
+            border-left: 1px solid rgb(205, 208, 209);
+    
+            &:hover {
+                background-color: rgba(205, 208, 209, 0.31);
+            }
+        }
+    
+        .container_booking_body {
+            flex: 1;
+
+            .container_booking_body_recently-viewed {
+                height: 48px;
+                padding: 12px 16px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                cursor: pointer;
+
+                svg {
+                    margin-right: 8px;
+                }
+
+                span {
+                    color: $primary-color;
+                    font-size: 1.47rem;
+                    font-weight: 500;
+                }
+            }
+
+            .container_booking_body_main {
+                background-color: #fff;
+                padding: 16px;
+                border-bottom-right-radius: 6px;
+
+                .input-wrapper_img-wrapper {
+                    margin-right: 8px;
+                }
+
+                .container_booking_body_item {
+                    margin-left: -12px;
+                    margin-right: -12px;
+                    display: flex;
+                    margin-bottom: 16px;
+
+                    .container_booking_body_item_input {
+                        padding: 0 12px;
+                    }
+                }
+
+                .container_booking_body_item:last-child {
+                    margin-bottom: 0;
+                }
+                
+                .container_booking_body_destination {
+                    .container_booking_body_item_input {
+                        width: 100%;
+                    }
+                }
+                
+                .container_booking_body_schedule {
+                    .container_booking_body_schedule_item {
+                        width: 33.33%;
+
+                        span {
+                            font-size: 1.6rem;
+                            line-height: 40px;
+                        }
+                    }
+                }
+
+                .container_booking_body_guests-and-search {
+                    .container_booking_body_guests {
+                        width: 66.67%;
+                    }
+
+                    .container_booking_body_search {
+                        width: 33.33%;
+
+                        .container_booking_body_search-btn {
+                            background-color: rgb(255, 94, 31);
+                            border-radius: 6px;
+                            cursor: pointer;
+                            
+                            &:hover {
+                                background-color: rgb(223, 68, 15);
+                            }
+
+                            @include flexCenter();
+
+                            img {
+                                margin-right: 4px;
+                            }
+
+                            span {
+                                color: #fff;
+                                font-size: 1.65rem;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+
+                .container_booking_body_select {
+                    margin-left: 0;
+                    margin-right: 0;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+
+                    .container_booking_body_select-box {
+                        width: 20px;
+                        height: 20px;
+                        border: 1px solid #CDD0D1;
+                        border-radius: 6px;
+                        margin: 0 8px 0 2px;
+                        cursor: pointer;
+                        position: relative;
+                        
+                        .container_booking_body_select_tick {
+                            position: absolute;
+                            top: -1px;
+                            left: -1px;
+                            width: 20px;
+                            height: 20px;
+                            background-color: rgb(1, 148, 243);
+                            background-image: url("https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/b/b610719a1b8874c05ccfd657adc17d42.png");
+                            background-repeat: no-repeat;
+                            background-position: 50% 50%;
+                            background-size: 50%;
+                            border-radius: 6px;
+                            opacity: 0;
+
+                            &.checked {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    .container_booking_body_select_text {
+                        margin-right: 12px;
+                        font-size: 1.45rem;
+                        font-weight: 460;
+                    }
+
+                    img {
+                        width: 20px;
+                    }
+                }
+
+                .container_booking_body_pay-upon {
+                    margin-left: 0;
+                    margin-right: 0;
+                    display: flex;
+                    align-items: center;
+                    width: fit-content;
+                    cursor: pointer;
+
+                    svg {
+                        margin-right: 4px;
+                    }
+
+                    span {
+                        color: $primary-color;
+                        font-size: 1.47rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}

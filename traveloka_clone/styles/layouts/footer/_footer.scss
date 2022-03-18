@@ -1,0 +1,183 @@
+.footer {
+    background-color: #1B1B1B;
+    padding-top: 24px;
+    color: #fff;
+
+    .footer_body {
+        width: 1080px;
+        margin: 0 auto;
+        display: flex;
+
+        .footer_certis-and-partners {
+            width: 33.33%;
+            padding: 0 12px;
+            display: flex;
+            flex-direction: column;
+
+            .footer_certis-and-partners_logo {
+                display: flex;
+            }
+
+            .footer_certis-and-partners_certis {
+                display: flex;
+                flex-wrap: wrap;
+
+                & > img {
+                    margin: 0 16px 16px 0;
+                    object-fit: fill;
+                }
+                
+                a {
+                    display: flex;
+                    margin: 0 16px 16px 0;
+                }
+            }
+
+            .footer_certis-and-partners_partner-btn {
+                height: 72px;
+                width: 253px;
+                @include flexCenter();
+                border: 2px solid #fff;
+                border-radius: 10px;
+                text-decoration: none;
+                color: #fff;
+                margin-top: 6px;
+                cursor: pointer;
+
+                img {
+                    width: 36px;
+                    margin-right: 16px;
+                }
+
+                span {
+                    font-size: 1.62rem;
+                }
+            }
+
+            .footer_certis-and-partners_payment {
+                margin-top: 16px;
+
+                .footer_certis-and-partners_payment_header {
+                    font-size: 1.62rem;
+                    line-height: 20px;
+                    font-weight: 500;
+                    margin-bottom: 12px;
+                }
+
+                .footer_certis-and-partners_payment_body {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .footer_certis-and-partners_payment_item {
+                        width: 64px;
+                        height: 48px;
+                        background-color: #fff;
+                        @include flexCenter();
+                        margin: 0 8px 8px 0;
+                        border-radius: 6px;
+
+                        img {
+                            width: 51px;
+                            object-fit: fill;
+                            object-position: 50% 50%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer_content {
+            width: 66.67%;
+            display: flex;
+            padding: 0 12px;
+            padding-top: 32px;
+
+            .footer_content_column {
+                width: 33.33%;
+                padding: 0 12px;
+
+                .footer_content_section {
+                    margin-bottom: 44px;
+
+                    .footer_content_section_header {
+                        font-size: 1.62rem;
+                        line-height: 20px;
+                        font-weight: 500;
+                        margin-bottom: 12px;
+                    }
+                    
+                    .footer_content_section_list {
+                        li {
+                            margin-bottom: 12px;
+                            opacity: 0.65;
+
+                            a {
+                                text-decoration: none;
+                                color: rgb(205,208,209);
+                                font-size: 1.5rem;
+                                line-height: 20px;
+                                display: flex;
+                                align-items: center;
+                                
+                                img {
+                                    margin-right: 12px;
+                                    filter: grayscale(1);
+                                }
+                                
+                                &.footer_content_section_list_link {
+                                    padding-bottom: 4px;
+                                }
+                            }
+                                
+                            &:hover {
+                                opacity: 1;
+
+                                a {
+                                    text-decoration: underline;
+                                    color: #fff;
+
+                                    img {
+                                        filter: grayscale(0);
+                                    }
+                                }
+                            }
+                        }
+
+                        .footer_content_section_download_link {
+                            margin-bottom: 16px;
+                            display: flex;
+
+                            img {
+                                opacity: 0.65;
+
+                                &:hover {
+                                    opacity: 1;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer_copyrights-and-address {
+        margin-top: 100px;
+        border-top: 2px solid rgba(205,208,209,0.15);
+        text-align: center;
+        padding: 24px 0 80px;
+
+        .footer_address {
+            font-size: 1.25rem;
+            line-height: 16px;
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 12px;
+        }
+
+        .footer_copyrights {
+            font-size: 1.45rem;
+            line-height: 20px;
+        }
+    }
+}

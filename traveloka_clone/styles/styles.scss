@@ -1,0 +1,30 @@
+
+@import './base/reset';
+@import './utils/variables';
+@import './utils/mixins';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 440;
+    color: $text-color;
+}
+
+body {
+    cursor: default;
+    position: relative;
+}
+
+@import './components/btn';
+@import './components/country-flag';
+@import './components/input';
+
+@import './layouts/header/header';
+@import './layouts/sidenav/sidenav';
+@import './layouts/container/container';
+@import './layouts/footer/footer';
+@import './layouts/help-box/help-box';

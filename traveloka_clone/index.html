@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloka</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;350;400;440;460;500;525;550&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header_navbar">
+            <div class="header_navbar_logo">
+                <div class="header_sidenav-open-btn">
+                    <img class="header_sidenav-open-btn_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/8/8c5c07f3e6c8c7806ef853f5e943e27b.svg" alt="">
+                </div>
+                <a class="header_navbar_logo-link" href="#">
+                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/3/30bf6c528078ba28d34bc3e37d124bdb.svg" alt="">
+                </a>
+            </div>
+            <div class="header_navbar_list">
+                <div class="header_navbar_item header_navbar_download-item dropdown-toggle">
+                    <div class="header_navbar_download-item-wrapper">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcMobilePhoneDownload"><path d="M6 15H18M9 3H8C6.89543 3 6 3.89543 6 5V19C6 20.1046 6.89543 21 8 21H16C17.1046 21 18 20.1046 18 19V5C18 3.89543 17.1046 3 16 3H15M10 18H14" stroke="#687176" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 2V11M12 11L10 9M12 11L14 9" stroke="#0194F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        <span>Download App</span>
+                        <img class="navbar_dropdown-arrow" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/7/725bdbbc829236edb107bb810038bd72.svg" alt="">
+                    </div>
+                    <div class="header_navbar_download-section dropdown-section">
+                        <div class="header_navbar_download_header">
+                            <svg width="32" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemArrowDown"><path d="M12 4V20M12 20L5 13M12 20L19 13" stroke="#687176" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Scan QR code to download</span>
+                        </div>
+                        <div class="header_navbar_download_body">
+                            <img id="header_navbar_download_qr" src="https://ik.imagekit.io/tvlk/image/imageResource/2021/05/20/1621505512045-e090f5237022cf86afd98eb132f19086.png?tr=h-116,q-75,w-116" alt="">
+                            <a href="#">
+                                <img class="header_navbar_download_store-img" src="https://ik.imagekit.io/tvlk/image/imageResource/2021/05/21/1621579427565-4b746b647c0424ee0409b835fd35b175.svg?tr=q-75,w-123" alt="">
+                            </a>
+                            <a href="#">
+                                <img class="header_navbar_download_store-img" src="https://ik.imagekit.io/tvlk/image/imageResource/2021/05/21/1621579433637-f60b505ed1f8f78c11172d55430a1819.svg?tr=q-75,w-123" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a class="header_navbar_item header_navbar_item-link" href="#">
+                    <img class="header_navbar_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/b/bdab924c2bd3a5fb492022beb158a6ef.svg" alt="">
+                    <span>Partner with Us</span>
+                </a>
+                <a class="header_navbar_item header_navbar_item-link" href="#">
+                    <img class="header_navbar_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/c80a2b136969e32f4db682792d1110f6.svg" alt="">
+                    <span>Saved</span>
+                </a>
+                <a class="header_navbar_item header_navbar_item-link" href="#">
+                    <img class="header_navbar_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/b/b0f87008a7a01d72ffb5eacf06870cba.svg" alt="">
+                    <span>My Booking</span>
+                </a>
+                <div class="header_navbar_item header_navbar_countries-item dropdown-toggle">
+                    <div class="header_navbar_countries-item-wrapper">
+                        <div id="header_navbar_countries-item_img" class="country-flag"></div>
+                        <span>VND</span>
+                        <img class="navbar_dropdown-arrow" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/7/725bdbbc829236edb107bb810038bd72.svg" alt="">
+                    </div>
+                    <div class="header_navbar_countries-section dropdown-section">
+                        <div class="header_navbar_countries_country-lang">
+                            <h3 class="header_navbar_countries_header">Country & Language</h3>
+                            <ul class="header_navbar_countries_list">
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag indonesia-flag"></div>
+                                    <span>Indonesia (Bahasa Indonesia)</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag indonesia-flag"></div>
+                                    <span>Indonesia (English)</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag global-flag"></div>
+                                    <span>Global (English)</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag malaysia-flag"></div>
+                                    <span>Malaysia (English)</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag malaysia-flag"></div>
+                                    <span>Malaysia (Bahasa Malaysia)</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag philippines-flag"></div>
+                                    <span>Philippines (English)</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag singapore-flag"></div>
+                                    <span>Singapore (English)</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag thailand-flag"></div>
+                                    <span>Thailand (English)</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag thailand-flag"></div>
+                                    <span>ไทย (ภาษาไทย)</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag vietnam-flag"></div>
+                                    <span>Việt Nam (Tiếng Việt)</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag vietnam-flag"></div>
+                                    <span>Vietnam (English)</span>
+                                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/0/06fbafb179fb36dbb9aee296f97844d3.svg" alt="">
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <div class="country-flag australia-flag"></div>
+                                    <span>Australia (English)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header_navbar_countries_currency">
+                            <h3 class="header_navbar_countries_header">Currency</h3>
+                            <ul class="header_navbar_countries_list">
+                                <li class="header_navbar_countries_item">
+                                    <abbr>AUD</abbr>
+                                    <span>Australian Dollar</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <abbr>SGD</abbr>
+                                    <span>Singapore Dollar</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <abbr>EUR</abbr>
+                                    <span>Euro</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <abbr>GBP</abbr>
+                                    <span>British Pound Sterling</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <abbr>IDR</abbr>
+                                    <span>Indonesian Rupiah</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <abbr>MYR</abbr>
+                                    <span>Malaysian Ringgit</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <abbr>USD</abbr>
+                                    <span>US Dollar</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <abbr>PHP</abbr>
+                                    <span>Philippine Peso</span>
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <abbr>VND</abbr>
+                                    <span>Vietnamese Dong</span>
+                                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/0/06fbafb179fb36dbb9aee296f97844d3.svg" alt="">
+                                </li>
+                                <li class="header_navbar_countries_item">
+                                    <abbr>THB</abbr>
+                                    <span>Thai Baht</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="btn header_navbar_countries_done-btn">Done</button>
+                    </div>
+                </div>
+                <div class="header_navbar_item header_navbar_login-item dropdown-toggle">
+                    <div class="header_navbar_login-item-wrapper">
+                        <div class="header_navbar_login_avatar"></div>
+                        <span>Log In</span>
+                        <img class="navbar_dropdown-arrow" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/7/725bdbbc829236edb107bb810038bd72.svg" alt="">
+                    </div>
+                    <div class="header_navbar_login-section dropdown-section">
+                        <div class="header_navbar_login_body">
+                            <h3>Log in to your account</h3>
+                            <div class="input header_navbar_login_email">
+                                <div class="input-label header_navbar_login_label">Email or mobile no.</div>
+                                <div class="input-wrapper header_navbar_login_input-wrapper">
+                                    <div class="input-wrapper_mask"></div>
+                                    <input class="input-wrapper_input header_navbar_login_input" type="text">
+                                </div>
+                            </div>
+                            <div class="input header_navbar_login_password">
+                                <div class="input-label header_navbar_login_label">
+                                    <span>Password</span>
+                                    <a href="#">Forgot Password?</a>
+                                </div>
+                                <div class="input-wrapper header_navbar_login_input-wrapper">
+                                    <div class="input-wrapper_mask"></div>
+                                    <input id="header_navbar_login_password-input" class="input-wrapper_input header_navbar_login_input" type="password">
+                                    <div class="input-wrapper_img-wrapper">
+                                        <img id="password-reveal-toggle" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/1/1d3eb6d81c7136efb59126326aac600b.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header_navbar_login_btn-and-register">
+                                <button class="btn header_navbar_login_btn">Log In</button>
+                                <div class="header_navbar_login_register">
+                                    <span>No account yet?</span>
+                                    <a href="#">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header_navbar_login_footer">
+                            <div class="header_navbar_login_footer_heading">Or log in with:</div>
+                            <div class="header_navbar_login_socials">
+                                <div class="btn header_navbar_login_social login_facebook">
+                                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/5/5f2c27c2674ad4a01c1cd42b2e0884aa.svg" alt="">
+                                    <span>Facebook</span>
+                                </div>
+                                <div class="btn header_navbar_login_social login_google">
+                                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/c6bf231775a1d162b567c0882e1d7e3b.svg" alt="">
+                                    <span>Google</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn header_navbar_register-btn">Register</button>
+            </div>
+        </nav>
+        <ul class="header_categories">
+            <div class="header_categories-wrapper">
+                <li class="header_categories_item dropdown-toggle">
+                    <div class="header_categories_item-wrapper">
+                        <span>Transports</span>
+                        <img class="categories_dropdown-arrow" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/5/5d2a9385fea80cf4f2cac027d7805ad3.svg" alt="">
+                    </div>
+                    <div class="header_categories_options dropdown-section">
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/4/4c2b56742d3432cbc9a0a2600fbc8bb5.svg" alt="">
+                            <span>Flights</span>
+                        </a>
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/3/36bca62f8840da5ea3670bf693f90f90.svg" alt="">
+                            <span>Flight + Hotel</span>
+                        </a>
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/c51ec07e3f7fb509b246825c6b7c6d6d.svg" alt="">
+                            <span>Airport Transfer</span>
+                        </a>
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/4/44b891a96bfa52b48bbc541a4b1bb226.svg" alt="">
+                            <span>Car Rental</span>
+                        </a>
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/3/301c3038b8bc837164fca384096404a6.svg" alt="">
+                            <span>JR Pass</span>
+                        </a>
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/6/60d9cc111177e91ae2313968ffb9d930.svg" alt="">
+                            <span>Flight Status</span>
+                        </a>
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/0/0d4d263a506fbeb97d7c863a1c85ffba.svg" alt="">
+                            <span>Price Alert</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="header_categories_item dropdown-toggle">
+                    <div class="header_categories_item-wrapper">
+                        <span>Accommodations</span>
+                        <img class="categories_dropdown-arrow" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/5/5d2a9385fea80cf4f2cac027d7805ad3.svg" alt="">
+                    </div>
+                    <div class="header_categories_options dropdown-section">
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/4/4f35d2c4e9c6c6663f831cca1d2392b3.svg" alt="">
+                            <span>Hotels</span>
+                        </a>
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/3/36bca62f8840da5ea3670bf693f90f90.svg" alt="">
+                            <span>Flight + Hotel</span>
+                        </a>
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/c0bbb2f73e0ccbc8be35f8d5b3949974.svg" alt="">
+                            <span>Quarantine Hotels</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="header_categories_item dropdown-toggle">
+                    <div class="header_categories_item-wrapper">
+                        <span>Things to Do</span>
+                        <img class="categories_dropdown-arrow" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/5/5d2a9385fea80cf4f2cac027d7805ad3.svg" alt="">
+                    </div>
+                    <div class="header_categories_options dropdown-section">
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/5/56ad06f2128fa715be3108b2b90e927c.svg" alt="">
+                            <span>Xperience</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="header_categories_item dropdown-toggle">
+                    <div class="header_categories_item-wrapper">
+                        <span>Travel Add-ons</span>
+                        <img class="categories_dropdown-arrow" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/5/5d2a9385fea80cf4f2cac027d7805ad3.svg" alt="">
+                    </div>
+                    <div class="header_categories_options dropdown-section">
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/f/f9dbe1077251284edf2c4f0eac008a70.svg" alt="">
+                            <span>My Points</span>
+                        </a>
+                        <a class="header_categories_option-link" href="#">
+                            <img class="header_categories_option_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/e/ed63a7bd6105a2fc1d1d9ec52c7a051b.svg" alt="">
+                            <span>Gift Voucher</span>
+                        </a>
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </header>
+
+    <div class="sidenav">
+        <div class="sidenav_mask"></div>
+        <div class="sidenav_list">
+            <div class="sidenav_list-wrapper">
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/4/455eab646e53732d81380eabadf10b47.svg" alt="">
+                    <span>Home</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/b/b0f87008a7a01d72ffb5eacf06870cba.svg" alt="">
+                    <span>My Booking</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/7/7eb0ddef942f797baed188048d3b44c0.svg" alt="">
+                    <span>My Inbox</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/c80a2b136969e32f4db682792d1110f6.svg" alt="">
+                    <span>Saved</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/2/257312a3c86f5acccb9016a2785f352c.svg" alt="">
+                    <span>Contact Us</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/b/bdab924c2bd3a5fb492022beb158a6ef.svg" alt="">
+                    <span>Partner with Us</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/7/758f48cd135044cc79b1be81b30b6fb7.svg" alt="">
+                    <span>Help Center</span>
+                </a>
+                <div class="sidenav_item sidenav_select-item">
+                    <div class="sidenav_select-item-wrapper">
+                        <div class="sidenav_select-item_flag">
+                            <div class="country-flag vietnam-flag"></div>
+                        </div>
+                        <span>Country & Language</span>
+                        <abbr>EN-VN</abbr>
+                    </div>
+                    <select class="sidenav_select-item_select" name="" id="">
+                        <option value="">Vietnam</option>
+                        <option value="">Thailand</option>
+                    </select>
+                </div>
+                <div class="sidenav_item sidenav_select-item">
+                    <div class="sidenav_select-item-wrapper">
+                        <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/a/a7dfbc5d44548175e9151279ba541913.svg" alt="">
+                        <span>Currency</span>
+                        <abbr>VND</abbr>
+                    </div>
+                    <select class="sidenav_select-item_select" name="" id="">
+                        <option value="">Vietnam</option>
+                        <option value="">Thailand</option>
+                    </select>
+                </div>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/e/e5c33e1fda1890d4c33d9dd26bd6a693.svg" alt="">
+                    <span>Download App</span>
+                </a>
+                <hr>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/4/4c2b56742d3432cbc9a0a2600fbc8bb5.svg" alt="">
+                    <span>Flights</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/4/4f35d2c4e9c6c6663f831cca1d2392b3.svg" alt="">
+                    <span>Hotels</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/3/36bca62f8840da5ea3670bf693f90f90.svg" alt="">
+                    <span>Flight + Hotel</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/c51ec07e3f7fb509b246825c6b7c6d6d.svg" alt="">
+                    <span>Airport Transfer</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/5/56ad06f2128fa715be3108b2b90e927c.svg" alt="">
+                    <span>Xperience</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/4/44b891a96bfa52b48bbc541a4b1bb226.svg" alt="">
+                    <span>Car Rental</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/3/301c3038b8bc837164fca384096404a6.svg" alt="">
+                    <span>JR Pass</span>
+                </a>
+                <hr>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/a/a06cd431186003df0ad51bdb474d9b09.svg" alt="">
+                    <span>Careers</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/a/a646cdd18832a5d02d177ffe9debca28.svg" alt="">
+                    <span>Blog</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/a/a1be732e5060ca22338f73cb3353950b.svg" alt="">
+                    <span>How to Book</span>
+                </a>
+                <a class="sidenav_item sidenav_link-item" href="#">
+                    <img class="sidenav_item_img" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/cef9778118bdd85e1062cdd0b6196362.svg" alt="">
+                    <span>Subscribe to Newsletter</span>
+                </a>
+            </div>
+            <img class="header_sidenav-close-btn" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/d/d87ef15ec3a57e7e2572c0ce92261228.svg" alt="">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container_banners">
+            <div class="container_banners_slider">
+                <a href="#">
+                    <img class="container_banner_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2020/12/08/1607410621598-e3654d0eaf095fd6a13d84a7017cda09.jpeg?tr=h-230,q-75,w-472" alt="">
+                </a>
+                <a href="#">
+                    <img class="container_banner_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/02/28/1646036503708-30d77be8dd925d0528930d12c2fb4b89.png?tr=h-230,q-75,w-472" alt="">
+                </a>
+                <a href="#">
+                    <img class="container_banner_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/03/10/1646884042927-bd52dc0a526d0f3bc502249fdcaab9b5.png?tr=h-230,q-75,w-472" alt="">
+                </a>
+                <a href="#">
+                    <img class="container_banner_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/03/15/1647323068613-a438e204c2c4ba41bcba27699c03bd1e.png?tr=h-230,q-75,w-472" alt="">
+                </a>
+                <a href="#">
+                    <img class="container_banner_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/01/07/1641538987148-388c180a2357bc3bece5c392531af44b.jpeg?tr=h-230,q-75,w-472" alt="">
+                </a>
+                <a href="#">
+                    <img class="container_banner_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/01/26/1643184964834-459ae217974d66cc4ae23ce8ce6fba50.jpeg?tr=h-230,q-75,w-472" alt="">
+                </a>
+            </div>
+            <div class="container_banners_footer">
+                <div id="banners-slider_left-btn" class="container_banners_btn disabled-btn">
+                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/97200c969038f8d49afc3efee8c467ce.svg" alt="">
+                </div>
+                <a href="#">See more deals</a>
+                <div id="banners-slider_right-btn" class="container_banners_btn">
+                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/a/ac8bd5eb944eb9b8790cc07dfd70bb37.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container_booking">
+            <div class="container_booking_mask"></div>
+            <div class="container_booking_wrapper">
+                <div class="container_booking_categories">
+                    <div class="container_booking_categories_item">
+                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/1/14570d0f2b738b8dc8ef903949bce73c.svg" alt="">
+                        <span>Flights</span>
+                    </div>
+                    <div class="container_booking_categories_item container_booking_categories_item--active">
+                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/a/a55648c68713fc122a36183be900970c.svg" alt="">
+                        <span>Hotels</span>
+                    </div>
+                    <div class="container_booking_categories_item">
+                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/d/d5986586ed5208e79da32e193ee6114e.svg" alt="">
+                        <span>Flight + Hotel</span>
+                    </div>
+                    <div class="container_booking_categories_item">
+                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/c73be2b5ed63788de517755b48545c7b.svg" alt="">
+                        <span>Airport Transfer</span>
+                    </div>
+                    <div class="container_booking_categories_item">
+                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/cc6c1c2302802a1979e32ecd7d6ab703.svg" alt="">
+                        <span>Xperience</span>
+                    </div>
+                    <div class="container_booking_categories_item">
+                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/c21a03d3f725df0655ff334d38e0b0fd.svg" alt="">
+                        <span>Car Rental</span>
+                    </div>
+                    <div class="container_booking_categories_item">
+                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/6/6a0839f8685df62f8cf06b894ca58749.svg" alt="">
+                        <span>JR Pass</span>
+                    </div>
+                    <div class="container_booking_categories_item">
+                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/f/f9dbe1077251284edf2c4f0eac008a70.svg" alt="">
+                        <span>My Points</span>
+                    </div>
+                    <div class="container_booking_categories_item">
+                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/6/60d9cc111177e91ae2313968ffb9d930.svg" alt="">
+                        <span>Flight Status</span>
+                    </div>
+                    <div class="container_booking_categories_item">
+                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/0/0d4d263a506fbeb97d7c863a1c85ffba.svg" alt="">
+                        <span>Price Alert</span>
+                    </div>
+                </div>
+                <div class="container_booking_expand-toggle">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemChevronLeft"><path d="M15 6L9 12L15 18" stroke="#687176" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </div>
+                <div class="container_booking_body">
+                    <div class="container_booking_body_recently-viewed">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemToolRecentSearch"><path d="M16.5 15L22 20.5M4.78988 12C4.60128 11.3663 4.5 10.695 4.5 10C4.5 6.13401 7.63401 3 11.5 3C15.366 3 18.5 6.13401 18.5 10C18.5 13.866 15.366 17 11.5 17C10.0128 17 8.63383 16.5362 7.5 15.7453M2.5 9.75L4.75 12L7 9.75" stroke="#0194f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 6.5V10H14" stroke="#0194F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        <span>Recently Viewed Hotels</span>
+                    </div>
+                    <div class="container_booking_body_main">
+                        <div class="container_booking_body_item container_booking_body_destination">
+                            <div class="container_booking_body_item_input input">
+                                <div class="input-label">City, destination, or hotel name</div>
+                                <div class="input-wrapper">
+                                    <div class="input-wrapper_mask"></div>
+                                    <div class="input-wrapper_img-wrapper">
+                                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/0/06c6fdcf3e33d2950e2743ea8c3d2208.svg" alt="">
+                                    </div>
+                                    <input class="input-wrapper_input focus-empty" type="text" value="Da Nang, Viet Nam">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container_booking_body_item container_booking_body_schedule">
+                            <div class="container_booking_body_schedule_item container_booking_body_item_input input">
+                                <div class="input-label">Check-in</div>
+                                <div class="input-wrapper">
+                                    <div class="input-wrapper_mask"></div>
+                                    <div class="input-wrapper_img-wrapper">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemCalendar"><path d="M7 2V5M17 2V5M3 8H21M11.5 11.5H12.5V12.5H11.5V11.5ZM11.5 16.5H12.5V17.5H11.5V16.5ZM16.5 11.5H17.5V12.5H16.5V11.5ZM6.5 16.5H7.5V17.5H6.5V16.5ZM5 21H19C20.1046 21 21 20.1046 21 19V6C21 4.89543 20.1046 4 19 4H5C3.89543 4 3 4.89543 3 6V19C3 20.1046 3.89543 21 5 21Z" stroke="#687176" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 11.5V12.5H6.5V11.5H7.5Z" stroke="#0194F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                    </div>
+                                    <input class="input-wrapper_input" type="text" value="Thu, 17 Mar 2022">
+                                </div>
+                            </div>
+                            <div class="container_booking_body_schedule_item container_booking_body_item_input input">
+                                <div class="input-label">Duration</div>
+                                <div class="input-wrapper">
+                                    <div class="input-wrapper_mask"></div>
+                                    <div class="input-wrapper_img-wrapper">
+                                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/b/b0ee9b0e2caa9d0b970177b0c2ee77d0.svg" alt="">
+                                    </div>
+                                    <input class="input-wrapper_input" type="text" value="1 night">
+                                    <img class="input-wrapper_down-arrow" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/96f78c74ef882223cecd102ba1e47812.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="container_booking_body_schedule_item container_booking_body_item_input input">
+                                <div class="input-label">Check-out</div>
+                                <span>Fri, 18 Mar 2022</span>
+                            </div>
+                        </div>
+                        <div class="container_booking_body_item container_booking_body_guests-and-search">
+                            <div class="container_booking_body_guests container_booking_body_item_input input">
+                                <div class="input-label">Guests and Rooms</div>
+                                <div class="input-wrapper">
+                                    <div class="input-wrapper_mask"></div>
+                                    <div class="input-wrapper_img-wrapper">
+                                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/98a7579ccebe5a779c32bc1da67853a8.svg" alt="">
+                                    </div>
+                                    <input class="input-wrapper_input" type="text" value="2 Adult(s), 0 Child, 1 Room">
+                                    <img class="input-wrapper_down-arrow" src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/96f78c74ef882223cecd102ba1e47812.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="container_booking_body_search container_booking_body_item_input input">
+                                <div class="input-label"></div>
+                                <div class="input-wrapper container_booking_body_search-btn">
+                                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/6/6109dccccb4bbae97f5ded035b3853d9.svg" alt="">
+                                    <span>Search Hotels</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="container_booking_body_item container_booking_body_select">
+                            <div class="container_booking_body_select-box">
+                                <div class="container_booking_body_select_tick"></div>
+                            </div>
+                            <span class="container_booking_body_select_text">Going on a business trip</span>
+                            <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/93d682fb169004ee2a60c098735dd3da.svg" alt="">
+                        </div>
+                        <div class="container_booking_body_item container_booking_body_pay-upon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcHotelPayUponCheckIn"><path d="M19.5 14H21V10.9C21 8.1938 18.8062 6 16.1 6H13.5M6 11V10.9C6 8.1938 8.1938 6 10.9 6H13.5M19.5 17H21.5M13.5 6V3.5M15.5 9H16C17.1046 9 18 9.89543 18 11V11.5M3.75 8C3.75 8 4 6.5 5.25 5.25C6.5 4 8 3.75 8 3.75M2.25 5C2.25 5 2.5 4 3.25 3.25C4 2.5 5 2.25 5 2.25" stroke="#0194f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 13.75L17 13.5V16M15 13.75V13.75C13.6703 13.9162 12.3269 13.9439 10.9914 13.8326L9.0086 13.6674C7.67314 13.5561 6.32974 13.5838 5 13.75V13.75M15 13.75V14C15 15.1046 15.8954 16 17 16V16M17 16V19M17 19V21L15 21.25M17 19V19C15.8954 19 15 19.8954 15 21V21.25M15 21.25V21.25C13.6703 21.4162 12.3269 21.4439 10.9914 21.3326L9.0086 21.1674C7.67314 21.0561 6.32974 21.0838 5 21.25V21.25M3 19V21.5L5 21.25M3 19V19C4.10457 19 5 19.8954 5 21V21.25M3 19V16M5 13.75L3 14V16M5 13.75V14C5 15.1046 4.10457 16 3 16V16M12 17.5C12 18.6046 11.1046 19.5 10 19.5C8.89543 19.5 8 18.6046 8 17.5C8 16.3954 8.89543 15.5 10 15.5C11.1046 15.5 12 16.3954 12 17.5Z" stroke="#0194F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            <span>Pay upon Check-in</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container_item container_qr-scan-download">
+            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/12/08/1638962854627-11d9aeef4e51f42c4356900d044cd968.png?tr=q-75,w-1280" alt="">
+        </div>
+        <div class="container_item container_exclusively">
+            <h2 class="container_item_header container_exclusively_header">Exclusively for Traveloka members</h2>
+            <div class="container_exclusively_sub-header">
+                <a href="#">Log in</a> or <a href="#">Register</a> to enjoy these benefits
+            </div>
+            <div class="container_exclusively_categories">
+                <a class="container_exclusively_categories-link" href="#">
+                    <div class="container_exclusively_categories_item">
+                        <img class="container_exclusively_categories_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2017/09/25/1506337422737-62994c69103a7cf81da163f4e053f2dc.svg?tr=q-75" alt="">
+                        <span>Flight Price Alerts</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemChevronRight"><path d="M9 6L15 12L9 18" stroke="#687176" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </div>
+                </a>
+                <a class="container_exclusively_categories-link" href="#">
+                    <div class="container_exclusively_categories_item">
+                        <img class="container_exclusively_categories_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2018/12/13/1544686502328-8f67e9820583ce678f46d4183a52906b.svg?tr=q-75" alt="">
+                        <span>Saved List</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemChevronRight"><path d="M9 6L15 12L9 18" stroke="#687176" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </div>
+                </a>
+                <a class="container_exclusively_categories-link" href="#">
+                    <div class="container_exclusively_categories_item">
+                        <img class="container_exclusively_categories_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2017/09/25/1506337426898-9ec2484fef85cd8e0a1d0b03f29dbae0.svg?tr=q-75" alt="">
+                        <span>Easy Reschedule</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemChevronRight"><path d="M9 6L15 12L9 18" stroke="#687176" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </div>
+                </a>
+                <a class="container_exclusively_categories-link" href="#">
+                    <div class="container_exclusively_categories_item">
+                        <img class="container_exclusively_categories_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2017/09/25/1506337432346-470da32d4bf189816f7043553abd5d0a.svg?tr=q-75" alt="">
+                        <span>Passenger Quick Pick</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemChevronRight"><path d="M9 6L15 12L9 18" stroke="#687176" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="container_item container_deals">
+            <div class="container_deals_header">
+                <h2 class="container_item_header container_deals_header_title">Popular Deals</h2>
+                <div class="container_deals_header_icons">
+                    <span>All</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcProductDuotoneFlightFill"><path d="M8.79289 4.20711L7 6L9 8L10.7929 6.20711C11.1834 5.81658 11.1834 5.18342 10.7929 4.79289L10.2071 4.20711C9.81658 3.81658 9.18342 3.81658 8.79289 4.20711Z" fill="#30C5F7"></path><path d="M17.7929 13.2071L16 15L18 17L19.7929 15.2071C20.1834 14.8166 20.1834 14.1834 19.7929 13.7929L19.2071 13.2071C18.8166 12.8166 18.1834 12.8166 17.7929 13.2071Z" fill="#30C5F7"></path><path d="M14 7L2.82279 3.27426C2.35068 3.11689 1.83469 3.33062 1.61213 3.77573L1.39479 4.21042C1.16925 4.6615 1.3149 5.20993 1.73452 5.48968L10 11L13 14L18.5103 22.2655C18.7901 22.6851 19.3385 22.8307 19.7896 22.6052L20.2243 22.3879C20.6694 22.1653 20.8831 21.6493 20.7257 21.1772L17 10L14 7Z" fill="#30C5F7"></path><path d="M3.53173 14.6915L6 15L9 18L9.30853 20.4683C9.42133 21.3707 8.91113 22.2355 8.06676 22.5733L7.85432 22.6583C7.37143 22.8514 6.82109 22.6422 6.5885 22.177L5 19L1.82299 17.4115C1.35781 17.1789 1.14857 16.6286 1.34173 16.1457L1.4267 15.9332C1.76445 15.0889 2.62934 14.5787 3.53173 14.6915Z" fill="#30C5F7"></path><path d="M5.68328 19.6584L9 18L13.4396 14.3003C14.4779 13.4351 15.4378 12.4801 16.3083 11.4463L21.8613 4.85219C22.5053 4.08741 22.457 2.95698 21.75 2.25C21.043 1.54302 19.9126 1.49466 19.1478 2.13868L12.5537 7.69166C11.5199 8.56219 10.5649 9.52214 9.69969 10.5604L6 15L4.34164 18.3167C3.91186 19.1763 4.82373 20.0881 5.68328 19.6584Z" fill="#30C5F7"></path></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcProductDuotoneHotelFill"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 4V21C2 21.5523 2.44772 22 3 22H6.5V20.75C6.5 20.3358 6.16421 20 5.75 20C5.33579 20 5 19.6642 5 19.25V19C5 18.4477 5.44772 18 6 18H11C11.5523 18 12 18.4477 12 19V19.25C12 19.6642 11.6642 20 11.25 20C10.8358 20 10.5 20.3358 10.5 20.75V22H14H15H21C21.5523 22 22 21.5523 22 21V12C22 10.8954 21.1046 10 20 10H15V4C15 3.44772 14.5523 3 14 3H12.5C12.2061 1.82459 11.15 1 9.93845 1H7.06155C5.84996 1 4.79385 1.82459 4.5 3H3C2.44772 3 2 3.44771 2 4ZM4 6C4 5.44772 4.44772 5 5 5H7C7.55228 5 8 5.44772 8 6V7C8 7.55228 7.55228 8 7 8H5C4.44772 8 4 7.55228 4 7V6ZM10 5C9.44772 5 9 5.44772 9 6V7C9 7.55228 9.44772 8 10 8H12C12.5523 8 13 7.55228 13 7V6C13 5.44772 12.5523 5 12 5H10ZM9 10C9 9.44772 9.44772 9 10 9H12C12.5523 9 13 9.44771 13 10V11C13 11.5523 12.5523 12 12 12H10C9.44772 12 9 11.5523 9 11V10ZM4 10C4 9.44771 4.44772 9 5 9H7C7.55228 9 8 9.44772 8 10V11C8 11.5523 7.55228 12 7 12H5C4.44772 12 4 11.5523 4 11V10ZM5 13C4.44772 13 4 13.4477 4 14V15C4 15.5523 4.44772 16 5 16H7C7.55228 16 8 15.5523 8 15V14C8 13.4477 7.55228 13 7 13H5ZM10 13C9.44772 13 9 13.4477 9 14V15C9 15.5523 9.44772 16 10 16H12C12.5523 16 13 15.5523 13 15V14C13 13.4477 12.5523 13 12 13H10ZM16 14V13C16 12.4477 16.4477 12 17 12H19C19.5523 12 20 12.4477 20 13V14C20 14.5523 19.5523 15 19 15H17C16.4477 15 16 14.5523 16 14ZM19 16H17C16.4477 16 16 16.4477 16 17V18C16 18.5523 16.4477 19 17 19H19C19.5523 19 20 18.5523 20 18V17C20 16.4477 19.5523 16 19 16Z" fill="#235D9F"></path><path d="M16 7V3C16 2.44772 16.4477 2 17 2C17.5523 2 18 2.44772 18 3V4H20V3C20 2.44772 20.4477 2 21 2C21.5523 2 22 2.44772 22 3V7C22 7.55228 21.5523 8 21 8C20.4477 8 20 7.55228 20 7V6H18V7C18 7.55228 17.5523 8 17 8C16.4477 8 16 7.55228 16 7Z" fill="#235D9F"></path></svg>
+                </div>
+                <a class="container_deals_header_link" href="#">
+                    <span>See more deals</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemChevronRight"><path d="M9 6L15 12L9 18" stroke="#0194f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </a>
+            </div>
+            <div class="container_deals_body">
+                <a class="container_deals_body_item" href="#">
+                    <img class="container_deals_body_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/02/28/1646036503708-30d77be8dd925d0528930d12c2fb4b89.png?tr=h-150,q-75,w-296" alt="">
+                </a>
+                <a class="container_deals_body_item" href="#">
+                    <img class="container_deals_body_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/03/10/1646884042927-bd52dc0a526d0f3bc502249fdcaab9b5.png?tr=h-150,q-75,w-296" alt="">
+                </a>
+                <a class="container_deals_body_item" href="#">
+                    <img class="container_deals_body_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/03/15/1647323068613-a438e204c2c4ba41bcba27699c03bd1e.png?tr=h-150,q-75,w-296" alt="">
+                </a>
+                <a class="container_deals_body_item" href="#">
+                    <img class="container_deals_body_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/03/08/1646727188833-9fbce4e4db34136a3f5c0d2b76740b59.png?tr=h-150,q-75,w-296" alt="">
+                </a>
+                <a class="container_deals_body_item" href="#">
+                    <img class="container_deals_body_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/01/07/1641538987148-388c180a2357bc3bece5c392531af44b.jpeg?tr=h-150,q-75,w-296" alt="">
+                </a>
+                <a class="container_deals_body_item" href="#">
+                    <img class="container_deals_body_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/01/26/1643184964834-459ae217974d66cc4ae23ce8ce6fba50.jpeg?tr=h-150,q-75,w-296" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="container_item container_as-seen-in">
+            <h2 class="container_item_header container_as-seen-in_header">Traveloka, as seen in</h2>
+            <div class="container_as-seen-in_body">
+                <a class="container_as-seen-in_link" href="#">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/09/22/1506075511476-549788d3f233d9fd4f82e56aadaa0699.jpeg?tr=q-75,w-150" alt="">
+                </a>
+                <a class="container_as-seen-in_link" href="#">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/09/22/1506075524458-863bf8978027623596b07905b77c3038.jpeg?tr=q-75,w-150" alt="">
+                </a>
+                <a class="container_as-seen-in_link" href="#">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/09/22/1506075529727-26e887499b15d490d6d8b7fe59254960.png?tr=q-75,w-150" alt="">
+                </a>
+                <a class="container_as-seen-in_link" href="#">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/12/19/1513667223219-208b4bee6762dda1687818bbfce0c833.png?tr=q-75,w-150" alt="">
+                </a>
+                <a class="container_as-seen-in_link" href="#">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/12/19/1513667252903-2eee8ba567cfce19f977d58698e00f63.png?tr=q-75,w-150" alt="">
+                </a>
+                <a class="container_as-seen-in_link" href="#">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/09/22/1506075535089-95cb6f321f857a1f7a19feb443689a35.jpeg?tr=q-75,w-150" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="container_item container_blogs">
+            <h2 class="container_item_header container_blogs_header">Latest Traveloka Blog Articles</h2>
+            <div class="container_blogs_body">
+                <div class="container_blogs_item">
+                    <a href="#" class="container_blogs_item-link">
+                        <div class="container_blogs_item_mask"></div>
+                        <img class="container_blogs_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2021/08/31/1630399815077-fed98332aac359c53be24d9bc54b79b2.jpeg?tr=h-316,q-75" alt="">
+                        <span class="container_blogs_item_title">Chill at home with online travel</span>
+                    </a>
+                </div>
+                <div class="container_blogs_item">
+                    <a href="#" class="container_blogs_item-link">
+                        <div class="container_blogs_item_mask"></div>
+                        <img class="container_blogs_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2021/08/31/1630399997215-8583997573cbf07d09160c050345020b.jpeg?tr=h-316,q-75" alt="">
+                        <span class="container_blogs_item_title">Quarantine hotel list in Ho Chi Minh City</span>
+                    </a>
+                </div>
+                <div class="container_blogs_item">
+                    <a href="#" class="container_blogs_item-link">
+                        <div class="container_blogs_item_mask"></div>
+                        <img class="container_blogs_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2021/08/31/1630399996064-e45a9e640b24af8e5ab7612b4d01ba13.jpeg?tr=h-316,q-75" alt="">
+                        <span class="container_blogs_item_title">Tips to protect yourself before Covid test</span>
+                    </a>
+                </div>
+                <div class="container_blogs_item">
+                    <a href="#" class="container_blogs_item-link">
+                        <div class="container_blogs_item_mask"></div>
+                        <img class="container_blogs_item_img" src="https://ik.imagekit.io/tvlk/image/imageResource/2021/08/31/1630400042219-3066705b9fe303c1b66112cddd1ae138.jpeg?tr=h-316,q-75" alt="">
+                        <span class="container_blogs_item_title">International Travel Guide 2021</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container_item container_partners">
+            <div class="container_partners_section">
+                <div class="container_partners_section_description">
+                    <h3 class="container_item_header container_partners_section_title">Payment Partners</h3>
+                    <p class="container_partners_section_content">We are partnering with the most reliable payment service providers to make sure every transaction is smooth and worry-free!</p>
+                </div>
+                <div class="container_partners_list">
+                    <div class="container_partners_list-hide-overflow">
+                        <div class="container_partners_list-wrapper">
+                            <div class="container_partners_list-wrapper-half">
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493983983523-d6d0c610380ef8f04774da504053351a.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493983991810-274568b9986cf92489e37700e8378820.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/10/19/1508392286594-065886675f5595e847bc995173ac5dc9.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984010432-1a47c9d199b3bb99118bcf7be40d869a.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984075386-9df836dd55c89d21a1c25d91a047f4e3.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984158056-fd1f0bbaeb4057f6dd67a86f1f8006ca.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2018/08/24/1535100734106-3252660725f9df1d6f421f52e716e65d.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617779303173-f02591ec5ab11a3c1525764701b300ed.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984365628-296ff845ac83532bb13dc2f804820ccd.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984172826-a5518c8b5c7ddc215e509847a586dd46.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984299677-665a657b8b72e8ffc847580db32b3412.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984313254-09c2d735e77cecda0aeb6e80c98dbe90.png?tr=q-75,w-88" alt="">
+                                </a>
+                            </div>
+                            <div class="container_partners_list-wrapper-half">
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984325287-ff8633a65252ce69aeaa36b2f7adafcd.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984337356-796f0420d822821e4ef0ecc895e041f5.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984355656-179dedce9a6220bc97ec430247f4c108.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984395380-795a31c283ada396ac72d8a884cc9ae6.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984408575-adf3c7772ae5a811f07f5d4a41de66c0.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984422857-e5e14858af26f9c6d17301bc01201900.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984437827-4d64929a070d8383d2e53c212768975e.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/05/1493984465178-8e5bfdf068fa2576e332c2d186e50f50.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/19/1495166869323-98f90f2efc22f0c38855cc88b5137f7b.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/19/1495174320721-bfa79400e78f16b1db8c6f4d8740f4df.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/19/1495174343098-9fd81da7be4099f1cbafe666652be25d.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/05/04/1620135147315-da58dc83af2c9ac16892560ec613ef08.png?tr=q-75,w-88" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container_partners_list_slider-btn container_partners_list_left-btn inactive">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemChevronLeft"><path d="M15 6L9 12L15 18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </div>
+                    <div class="container_partners_list_slider-btn container_partners_list_right-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemChevronRight"><path d="M9 6L15 12L9 18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="container_partners_section">
+                <div class="container_partners_section_description">
+                    <h3 class="container_item_header container_partners_section_title">Hotel Partners</h3>
+                    <h5 class="container_partners_section_sub-title">Domestic & International Hotel Partners</h5>
+                    <p class="container_partners_section_content">We are partnering with hotel chains across the globe to ensure a comfortable stay wherever you travel!</p>
+                </div>
+                <div class="container_partners_list">
+                    <div class="container_partners_list-hide-overflow">
+                        <div class="container_partners_list-wrapper">
+                            <div class="container_partners_list-wrapper-half">
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/08/08/1502200780482-30c1b0ea86019fe73c4d14683e409293.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2018/01/29/1517200921330-784c7f0f6798fdb7c3b14d23881d5090.jpeg?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2018/01/29/1517200871912-592258729faec3c08e23d4f7c8c0da07.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2018/01/29/1517201226378-8affc1dfeeafe879121fc94652a7332f.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/08/08/1502200796134-3e687ae7c1e145253ef72691f5f18318.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2018/01/29/1517201184025-b629781230030dbfc28bcbfb127286f6.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/08/08/1502200776552-f852b752ae88e7e0902fb0d3bfc41a00.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2018/01/29/1517201056739-4030efe3d4ea793a40904f712cec37af.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/08/08/1502200809743-5dde6f77b2b13ac38a752953eb78e692.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/08/08/1502200785889-c88f0b3d3f0c0711af02b5ecda331105.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/08/08/1502200813329-e3ef4b6c35b64c4ec14d596f3306f239.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2018/01/29/1517201013000-1f5c98cc6081ca889e0ee99d4bdae1ce.png?tr=q-75,w-88" alt="">
+                                </a>
+                            </div>
+                            <div class="container_partners_list-wrapper-half">
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/08/08/1502200782803-92cd85419dd6440bbc1c7b8d5a061249.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/08/08/1502200819165-5bd89b99597e581e6917c18eb32695ca.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/08/08/1502200895287-eaa4b87f59ca0636af71c930649c5da7.png?tr=q-75,w-88" alt="">
+                                </a>
+                                <a class="container_partners_item" href="#">
+                                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/08/08/1502200805093-7f22b69691bac8cee0ef4b3f0988fd78.png?tr=q-75,w-88" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container_partners_list_slider-btn container_partners_list_left-btn hotel-partners-btn inactive">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemChevronLeft"><path d="M15 6L9 12L15 18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </div>
+                    <div class="container_partners_list_slider-btn container_partners_list_right-btn hotel-partners-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemChevronRight"><path d="M9 6L15 12L9 18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container_item container_why-book">
+            <h2 class="container_item_header container_why-book_header">Why book with Traveloka?</h2>
+            <div class="container_why-book_body">
+                <div class="container_why-book_item">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/17/1495008397738-95cd53fb75f2b276db1a99c906ecb8bb.png?tr=h-150,q-75,w-150" alt="">
+                    <div class="container_why-book_item_description">
+                        <h3>One Stop Travel Solution</h3>
+                        <p>A complete solution - book flights and hotels in Vietnam & Southeast Asia at the same time with great savings.</p>
+                    </div>
+                </div>
+                <div class="container_why-book_item">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/17/1495008412429-b596ddd811d26257f3125ef14d5d70dc.png?tr=h-150,q-75,w-150" alt="">
+                    <div class="container_why-book_item_description">
+                        <h3>All-in Everyday Low Prices</h3>
+                        <p>The low prices you see are what you pay! No additional charges for easy comparison across various options!</p>
+                    </div>
+                </div>
+                <div class="container_why-book_item">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/17/1495008433090-fa4cd01d29bc7733a08ab3fd9572b796.png?tr=h-150,q-75,w-150" alt="">
+                    <div class="container_why-book_item_description">
+                        <h3>Secure & Flexible Payment Methods</h3>
+                        <p>Secure online transactions with various payment options from Convenience Stores,  Bank Transfer, Credit Card to Internet Banking. No additional transaction fees.</p>
+                    </div>
+                </div>
+                <div class="container_why-book_item">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/17/1495008444362-b3d525f7c3d223473b4b01bab75e15cf.png?tr=h-150,q-75,w-150" alt="">
+                    <div class="container_why-book_item_description">
+                        <h3>24/7 Customer Support</h3>
+                        <p>Around-the-clock customer service team to assist you in every step of the booking process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container_item container_top-deals">
+            <h2 class="container_item_header container_top-deals_header">What interests you?</h2>
+            <div class="container_top-deals_body">
+                <div class="container_top-deals_navbar">
+                    <div class="container_top-deals_navbar-wrapper">
+                        <div class="container_top-deals_navbar_item">
+                            <span class="container_top-deals_name container_top-deals_name--selected">Top Flight Destinations</span>
+                        </div>
+                        <div class="container_top-deals_navbar_item">
+                            <span class="container_top-deals_name">Top Hotel Destinations</span>
+                        </div>
+                        <div class="container_top-deals_navbar_item">
+                            <span class="container_top-deals_name">Top Packages Destination</span>
+                        </div>
+                        <div class="container_top-deals_navbar_item">
+                            <span class="container_top-deals_name">Top Things to Do</span>
+                        </div>
+                    </div>
+                    <div class="container_top-deals_navbar_underline"></div>
+                </div>
+                <div class="container_top-deals_categories">
+                    <div class="container_top-deals_section container_top-deals_section--4col active-section">
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Flights to Da Nang</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights to Phu Quoc</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights to Nha Trang</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights to Hanoi</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights to Da Lat</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights to Hue</span>
+                            </a>
+                        </div>
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Flights from Sai Gon to Hanoi</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Sai Gon to Danang</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Sai Gon to Phu Quoc</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Sai Gon to Nha Trang</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Sai Gon to Da Lat</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights to Vinh</span>
+                            </a>
+                        </div>
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Flights from Hanoi to Sai Gon</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Hanoi to Phu Quoc</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Hanoi to Da Nang</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Ha Noi to Nha Trang</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Hanoi to Da Lat</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights to Hai Phong</span>
+                            </a>
+                        </div>
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Flights from Da Nang to Hanoi</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Da Nang to Sai Gon</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Sai Gon to Singapore</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Sai Gon to Bangkok</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Hanoi to Singapore</span>
+                            </a>
+                            <a href="#">
+                                <span>Flights from Hanoi to Bangkok</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="container_top-deals_section container_top-deals_section--3col">
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Nha Trang Hotels</span>
+                            </a>
+                            <a href="#">
+                                <span>Ho Chi Minh Hotels</span>
+                            </a>
+                            <a href="#">
+                                <span>Da Nang Hotels</span>
+                            </a>
+                            <a href="#">
+                                <span>Sa Pa Hotels</span>
+                            </a>
+                            <a href="#">
+                                <span>Phu Quoc Hotels</span>
+                            </a>
+                        </div>
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Da Lat Hotels</span>
+                            </a>
+                            <a href="#">
+                                <span>Ha Noi Hotels</span>
+                            </a>
+                            <a href="#">
+                                <span>Hoi An Hotels</span>
+                            </a>
+                            <a href="#">
+                                <span>Thua Thien Hue Hotels</span>
+                            </a>
+                            <a href="#">
+                                <span>Hai Phong Hotels</span>
+                            </a>
+                        </div>
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Halong Bay Hotels</span>
+                            </a>
+                            <a href="#">
+                                <span>Mui Ne Hotels</span>
+                            </a>
+                            <a href="#">
+                                <span>Phan Thiet Hotels</span>
+                            </a>
+                            <a href="#">
+                                <span>Quy Nhon Hotels</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="container_top-deals_section container_top-deals_section--3col">
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Ho Chi Minh City Package</span>
+                            </a>
+                            <a href="#">
+                                <span>Hanoi Package</span>
+                            </a>
+                        </div>
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Da Nang Package</span>
+                            </a>
+                            <a href="#">
+                                <span>Singapore Package</span>
+                            </a>
+                        </div>
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Nha Trang Package</span>
+                            </a>
+                            <a href="#">
+                                <span>Phu Quoc Package</span>
+                            </a>
+                            <a href="#">
+                                <span>EPIC Sale</span>
+                            </a>
+                            <a href="#">
+                                <span>EPIC Referral</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="container_top-deals_section container_top-deals_section--3col">
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Things to do in Ho Chi Minh City</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Hoi An</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Da Nang</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Nha Trang</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Da Lat</span>
+                            </a>
+                        </div>
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Things to do in Hanoi</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Phu Quoc</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Sa Pa</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Ha Giang</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Ninh Binh</span>
+                            </a>
+                        </div>
+                        <div class="container_top-deals_section_column">
+                            <a href="#">
+                                <span>Things to do in Singapore</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Thailand</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Malaysia</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Korea</span>
+                            </a>
+                            <a href="#">
+                                <span>Things to do in Japan</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer_body">
+            <div class="footer_certis-and-partners">
+                <div class="footer_certis-and-partners_logo">
+                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/8/86afd0785f5505dd6d584971576dea27.svg" alt="">
+                </div>
+                <div class="footer_certis-and-partners_certis">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/12/13/1513150198216-822560165b4cfa5d5ac17a7987028b03.svg?tr=h-35,q-75" alt="">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/12/13/1513150313470-072f6bdc02c0b73fcf791aa2b2264fbd.svg?tr=h-35,q-75" alt="">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/12/13/1513150321127-5096be77d2a19401b476853e54ba2cc6.svg?tr=h-35,q-75" alt="">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/05/10/1620638808154-e6c02ed786235ab59252628a9aa9b715.png?tr=h-35,q-75" alt="">
+                    <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/05/10/1620639321776-9db1bf99b0d4ff46db160c7a02b0536f.png?tr=h-35,q-75" alt="">
+                    <a href="#">
+                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2019/09/23/1569229181629-eeb038ad844874f951326d0a8534bf48.png?tr=q-75,w-100" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2019/09/23/1569229181629-eeb038ad844874f951326d0a8534bf48.png?tr=q-75,w-100" alt="">
+                    </a>
+                </div>
+                <a class="footer_certis-and-partners_partner-btn" href="#">
+                    <div>
+                        <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/9edc2cd0b5368b5196829820521b2d6b.svg" alt="">
+                    </div>
+                    <span>Partner with Traveloka</span>
+                </a>
+                <div class="footer_certis-and-partners_payment">
+                    <div class="footer_certis-and-partners_payment_header">Payment Partners</div>
+                    <div class="footer_certis-and-partners_payment_body">
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558339548088-c536c896b175cb38f99a31f5dd2a989a.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558339578215-99466ea3d377ada2939bf2117df21b11.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558339591544-eae8263f3d4021c8951e271bdddf60a0.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558339553631-9cebb9f6a7a3b0e427b7a2d9da2fd8c0.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558339557703-5697f31b3e12a942eabc0f613bff8fb9.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558339567663-c7c5e25757f0d69375aa6de6ad57958f.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617778793443-2f6b7f7d0668a4a815962032dd8233a2.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781232473-330f36367feac4132c5af1b3df54d3f1.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558339648624-307f4a5f54e873a6c9f272673f193062.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558339663962-2037bef017440339eda165360a5e239f.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558339666745-2be0cc98504595cda91d0a2a5342a20b.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781263528-febaf8c61699a7df689ffbd475abd453.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781253184-2ef4eea06e759ab13bc30fac59e715ad.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781255909-7089100c4728a3cc8d3c1822b2bd2e8c.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781266437-5664d3dc5b8c688df3f83af1af5d3f6d.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781273499-667dfd2c1d23335dac1689bdd1b3e187.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781276401-2ee9043e84971e72e57a1b29db6f3062.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781279477-47b2a8f5bcf3cba19f9e518cf59627a7.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781283882-14484fab2f2d958a1b2917dd450d31ac.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781286986-ff7313b2a822727d5940a3ed2793bad5.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781292722-ef87e62f12612a44e0f1640d4b646033.png?tr=q-75,w-51" alt="">
+                        </div>
+                        <div class="footer_certis-and-partners_payment_item">
+                            <img src="https://ik.imagekit.io/tvlk/image/imageResource/2021/04/07/1617781296885-a206730836975c02b8ce75a732f00caf.png?tr=q-75,w-51" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_content">
+                <div class="footer_content_column footer_content_about-and-social">
+                    <div class="footer_content_section">
+                        <h5 class="footer_content_section_header">About Traveloka</h5>
+                        <ul class="footer_content_section_list">
+                            <li>
+                                <a href="#">How to Book</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Help Center</a>
+                            </li>
+                            <li>
+                                <a href="#">Careers</a>
+                            </li>
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_content_section">
+                        <h5 class="footer_content_section_header">Follow us on</h5>
+                        <ul class="footer_content_section_list">
+                            <li>
+                                <a class="footer_content_section_list_link" href="#">
+                                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/b/b5c0e050176153ba05ed1d0ece95c9e2.svg" alt="">
+                                    <span>Twitter</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer_content_section_list_link" href="#">
+                                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/5/50752125b5a9ef77932df8daaa59c28f.svg" alt="">
+                                    <span>Facebook</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer_content_section_list_link" href="#">
+                                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/a/a7a24301c32be8a7d95db652945f3249.svg" alt="">
+                                    <span>Instagram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer_content_section_list_link" href="#">
+                                    <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/6/61ba544b71eed91c568993099757aa34.svg" alt="">
+                                    <span>Youtube</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_content_column footer_content_products">
+                    <div class="footer_content_section">
+                        <h5 class="footer_content_section_header">Products</h5>
+                        <ul class="footer_content_section_list">
+                            <li>
+                                <a href="#">Flights</a>
+                            </li>
+                            <li>
+                                <a href="#">Hotels</a>
+                            </li>
+                            <li>
+                                <a href="#">JR Pass</a>
+                            </li>
+                            <li>
+                                <a href="#">Flight + Hotel</a>
+                            </li>
+                            <li>
+                                <a href="#">Xperience</a>
+                            </li>
+                            <li>
+                                <a href="#">Car Rental</a>
+                            </li>
+                            <li>
+                                <a href="#">Villas</a>
+                            </li>
+                            <li>
+                                <a href="#">Apartments</a>
+                            </li>
+                            <li>
+                                <a href="#">Airport Transport</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_content_column footer_content_other-and-download">
+                    <div class="footer_content_section">
+                        <h5 class="footer_content_section_header">Other</h5>
+                        <ul class="footer_content_section_list">
+                            <li>
+                                <a href="#">Traveloka Affiliate</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a href="#">Regulation for operation</a>
+                            </li>
+                            <li>
+                                <a href="#">Register Your Accommodation</a>
+                            </li>
+                            <li>
+                                <a href="#">Register Your Experience Business</a>
+                            </li>
+                            <li>
+                                <a href="#">Traveloka Press Room</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_content_section">
+                        <h5 class="footer_content_section_header">Download Traveloka App</h5>
+                        <ul class="footer_content_section_list">
+                            <a class="footer_content_section_download_link" href="#">
+                                <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/c90225c14bd4b3b9dc24f1eef7ce6260.svg" alt="">
+                            </a>
+                            <a class="footer_content_section_download_link" href="#">
+                                <img src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/7/710ae7ca20e600c9c96165ea400042c1.svg" alt="">
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_copyrights-and-address">
+            <div class="footer_address">
+                Traveloka Vietnam Co., Ltd. Enterprise Reg.: 0313581779. An Phu Building, 117-119 Ly Chinh Thang, Ward 7, District 3, HCMC
+            </div>
+            <div class="footer_copyrights">
+                Copyright © 2022 Traveloka
+            </div>
+        </div>
+    </footer>
+
+    <div class="help-box">
+        <a href="#">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-id="IcSystemHelpFill"><path fill-rule="evenodd" clip-rule="evenodd" d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM13.5061 6.13503C12.558 5.66096 11.442 5.66096 10.4939 6.13503L9.55276 6.60557C9.05878 6.85256 8.85856 7.45324 9.10555 7.94721C9.35254 8.44119 9.95321 8.64142 10.4472 8.39443L11.3883 7.92388C11.7734 7.73135 12.2266 7.73135 12.6117 7.92388L12.9197 8.07791C13.4805 8.35832 13.7843 8.97938 13.6613 9.59422C13.6075 9.86339 13.4752 10.1106 13.2811 10.3047L12.1371 11.4487C11.8331 11.7527 11.5801 12.1037 11.3878 12.4883L11.3167 12.6305C11.1084 13.0471 11 13.5064 11 13.9722V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V13.9722C13 13.8169 13.0361 13.6638 13.1055 13.525L13.1767 13.3827C13.2728 13.1904 13.3993 13.0149 13.5513 12.8629L14.6953 11.7189C15.1686 11.2456 15.4912 10.6428 15.6225 9.98644C15.9223 8.48723 15.1817 6.97281 13.8142 6.28906L13.5061 6.13503ZM11.75 15.75C11.1977 15.75 10.75 16.1977 10.75 16.75V17.25C10.75 17.8023 11.1977 18.25 11.75 18.25H12.25C12.8023 18.25 13.25 17.8023 13.25 17.25V16.75C13.25 16.1977 12.8023 15.75 12.25 15.75H11.75Z" fill="#FFFFFF"></path></svg>
+            <span>Need help?</span>
+        </a>
+    </div>
+
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

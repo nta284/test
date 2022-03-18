@@ -1,0 +1,97 @@
+
+.container_partners {
+    margin-top: 56px;
+    
+    .container_partners_section {
+        padding: 56px 0;
+        display: flex;
+        border-bottom: 1px solid rgb(218, 218, 218);
+
+        .container_partners_section_description {
+            width: 320px;
+            margin-right: 24px;
+            
+            .container_partners_section_title {
+                margin-bottom: 16px;
+            }
+
+            .container_partners_section_sub-title {
+                font-size: 1.45rem;
+                line-height: 20px;
+                color: #687176;
+                margin-bottom: 16px;
+            }
+            
+            .container_partners_section_content {
+                line-height: 24px;
+                font-size: 1.65rem;
+            }
+        }
+
+        .container_partners_list {
+            width: 672px;
+            position: relative;
+            
+            .container_partners_list-hide-overflow {
+                overflow-x: hidden;
+                overflow-y: auto;
+
+                .container_partners_list-wrapper {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    flex-wrap: nowrap;
+                    width: fit-content;
+                    transform: translateX(0);
+                    transition: 0.5s linear;
+
+                    .container_partners_list-wrapper-half {
+                        width: 672px;
+                        height: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        .container_partners_item {
+                            width: 88px;
+                            max-height: 72px;
+                            margin: 0 12px 24px;
+                            display: flex;
+
+                            img {
+                                width: 88px;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .container_partners_list_slider-btn {
+                position: absolute;
+                width: 28px;
+                height: 28px;
+                top: 55px;
+                background-color: rgba(104,113,118,0.8);
+                border-radius: 50%;
+                @include flexCenter();
+                cursor: pointer;
+                
+                &.container_partners_list_left-btn {
+                    left: -14px;
+                }
+                
+                &.container_partners_list_right-btn {
+                    right: -14px;
+                }
+
+                &.hotel-partners-btn {
+                    top: 67px;
+                }
+
+                &.inactive {
+                    display: none;
+                }
+            }
+        }
+    }
+}

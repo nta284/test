@@ -1,0 +1,309 @@
+.dropdown-section {
+    position: absolute;
+    top: 150%;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(3, 18, 26, 0.15);
+    border-radius: 6px;
+    cursor: default;
+    z-index: 1;
+    transform-origin: 0 0;
+    transform: scaleY(0);
+    transition: 0.3s ease-out;
+
+    &.scale-1 {
+        transform: scaleY(1);
+    }
+}
+
+.header_navbar_download-section {
+    width: 150px;
+    
+    .header_navbar_download_header {
+        padding: 16px;
+        display: flex;
+        align-items: center;
+
+        svg {
+            height: 16px;
+            margin-right: 8px;
+        }
+
+        span {
+            font-size: 1.45rem;
+            font-weight: 500;
+        }
+    }
+
+    .header_navbar_download_body {
+        text-align: center;
+        padding-bottom: 4px;
+
+        #header_navbar_download_qr {
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 14px;
+
+            .header_navbar_download_store-img {
+                width: 123px;
+            }
+        }
+    }
+}
+
+.header_navbar_countries-section {
+    right: 0;
+    width: 510px;
+    padding: 8px 0;
+    display: flex;
+
+    .header_navbar_countries_header {
+        font-size: 1.65rem;
+        font-weight: 500;
+        margin-bottom: 8px;
+    }
+
+    .header_navbar_countries_list {
+        .header_navbar_countries_item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 1.47rem;
+            cursor: pointer;
+
+            span {
+                flex: 1;
+            }
+        }
+    }
+
+    .header_navbar_countries_country-lang {
+        padding: 0 12px;
+        width: 52.5%;
+        border-right: 1px solid rgb(205, 208, 209);
+
+        .indonesia-flag {
+            background-image: url("https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/90071d4fd97ce245feacad8b0e396d75.svg");
+        }
+
+        .global-flag {
+            background-image: url("https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/f/f91815c8c137b036fed756dd718bf0ba.svg");
+        }
+
+        .malaysia-flag {
+            background-image: url("https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/cdc1d233453152774a786dff6af47d62.svg");
+        }
+
+        .philippines-flag {
+            background-image: url("https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/6/6ff101d8eb042f1764ca2a50cc67fb26.svg");
+        }
+
+        .singapore-flag {
+            background-image: url("https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/8/8e7c1fc6149e4013bd63f1bb370c548d.svg");
+        }
+
+        .thailand-flag {
+            background-image: url("https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/c/cda34076a3d718348cb6cc861e5dacf2.svg");
+        }
+
+        .vietnam-flag {
+            background-image: url("https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/96f8c046147fb32a009ba122f35312aa.svg");
+        }
+
+        .australia-flag {
+            background-image: url("https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/9024166426a800c9298c54a68f527f13.svg");
+        }
+    }
+
+    .header_navbar_countries_currency {
+        padding: 0 12px;
+        width: 47.5%;
+        
+        .header_navbar_countries_item {
+            line-height: 20px;
+
+            abbr {
+                font-weight: 440;
+                font-size: 1.57rem;
+                width: 45px;
+            }
+
+            span {
+                color: #687176;
+            }
+        }
+    }
+
+    .header_navbar_countries_done-btn {
+        position: absolute;
+        bottom: 8px;
+        right: 12px;
+        padding: 8px 12px;
+        background-color: $primary-color;
+        color: #fff;
+        line-height: 16px;
+
+        &:hover {
+            background-color: #017ef3;
+        }
+    }
+}
+
+.header_navbar_login-section {
+    width: 300px;
+    top: 120%;
+    right: 0;
+
+    .header_navbar_login_body {
+        padding: 16px;
+        line-height: 20px;
+
+        h3 {
+            font-size: 1.7rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .header_navbar_login_label {
+            a {
+                color: #0264C8;
+                text-decoration: none;
+                font-weight: 440;
+                position: relative;
+                top: 2px;
+
+                &:hover {
+                    opacity: 0.8;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .header_navbar_login_input-wrapper {
+            margin-bottom: 20px;
+            width: 100%;
+
+            #header_navbar_login_password-input {
+                font: caption;
+                font-size: 1.6rem;
+            }
+
+            #password-reveal-toggle {
+                transition: 0.15s;
+            }
+        }
+        
+        .header_navbar_login_btn-and-register {
+            display: flex;
+            align-items: center;
+
+            .header_navbar_login_btn {
+                background-color: #FF5E1F;
+                font-size: 1.7rem;
+                color: #fff;
+                height: 40px;
+                line-height: 20px;
+                padding: 0 12px;
+                margin-right: 16px;
+            }
+
+            .header_navbar_login_register {
+                font-size: 1.45rem;
+                font-weight: 460;
+
+                span {
+                    display: block;
+                }
+
+                a {
+                    color: #0264C8;
+                    text-decoration: none;
+
+                    &:hover {
+                        opacity: 0.8;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .header_navbar_login_footer {
+        padding: 12px;
+        background-color: $hover-color;
+
+        .header_navbar_login_footer_heading {
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .header_navbar_login_socials {
+            @include flexCenter();
+            
+            img {
+                width: 16px;
+                margin-right: 5px
+            }
+
+            .header_navbar_login_social {
+                @include flexCenter();
+                padding: 8px 12px;
+                color: #fff;
+                height: 32px;
+                width: 132px;
+                font-weight: 440;
+            }
+            
+            .login_facebook {
+                background-color: #3B5998;
+                margin-right: 12px;
+            }
+            
+            .login_google {
+                background-color: #4285F4;
+            }
+        }
+    }
+}
+
+
+.header_categories_options {
+    padding: 8px 0;
+    left: 0;
+    top: 150%;
+    z-index: 0;
+    white-space: nowrap;
+
+    .header_categories_option-link {
+        padding: 8px 12px;
+        text-decoration: none;
+        color: $text-color;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            background-color: rgb(243, 243, 243);
+        }
+
+        .header_categories_option_img {
+            width: 20px;
+            margin-right: 8px;
+        }
+
+        span {
+            font-weight: 350;
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.header_categories_item:last-child .header_categories_options {
+    left: auto;
+    right: 0;
+}

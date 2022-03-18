@@ -1,0 +1,27 @@
+.help-box {
+    position: fixed;
+    width: 136px;
+    height: 40px;
+    bottom: 16px;
+    right: 16px;
+    border-radius: 20px;
+    background-color: #0264C8;
+    @include flexCenter();
+
+    a {
+        text-decoration: none;
+        color: #fff;
+
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 4px;
+        }
+
+        span {
+            font-size: 1.65rem;
+            font-weight: 525;
+        }
+    }
+}

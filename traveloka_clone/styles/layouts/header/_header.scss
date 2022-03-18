@@ -1,0 +1,176 @@
+.header {
+    position: relative;
+    height: 99px;
+    width: 100%;
+    font-size: 1.6rem;
+    background-color: #fff;
+    position: fixed;
+    box-shadow: 0px 2px 5px rgba(3, 18, 26, 0.15);
+    border-top: 4px solid $primary-color;
+    z-index: 2;
+
+    // common
+    @import './dropdown-sections';
+
+    .header_navbar {
+        max-width: 1280px;
+        height: 55px;
+        margin: 0 auto;
+        padding: 4px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        .header_navbar_logo {
+            display: flex;
+            align-items: center;
+
+            .header_sidenav-open-btn {
+                margin-right: 16px;
+                margin-top: -2px;
+
+                .header_sidenav-open-btn_img {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .header_navbar_list {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 1.47rem;
+            position: relative;
+            top: -1px;
+
+            .dropdown-toggle {
+                position: relative;
+            }
+            
+            .header_navbar_item {
+                margin-right: 16px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            .header_navbar_download-item {
+                .header_navbar_download-item-wrapper {
+                    display: flex;
+                    align-items: center;
+
+                    .header_navbar_item_img {
+                        width: 16px;
+                    }
+
+                    span {
+                        margin: 0 4px;
+                    }
+                }
+            }
+
+            .header_navbar_item-link {
+                text-decoration: none;
+                color: $text-color;
+
+                .header_navbar_item_img {
+                    width: 16px;
+                    margin-right: 8px;
+                }
+            }
+
+            .header_navbar_countries-item {
+                
+                .header_navbar_countries-item-wrapper {
+                    display: flex;
+                    align-items: center;
+                    
+                    #header_navbar_countries-item_img {
+                        background-image: url("https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/96f8c046147fb32a009ba122f35312aa.svg");
+                    }
+
+                    span {
+                        margin-right: 4px;
+                    }
+                }
+            }
+
+            .header_navbar_login-item {
+                .header_navbar_login-item-wrapper {
+                    display: flex;
+                    align-items: center;
+
+                    .header_navbar_login_avatar {
+                        background-image: url("https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/f/f2ccb8732da6068a2f24a40aea2bdcdd.svg");
+                        background-repeat: no-repeat;
+                        background-position: 50% 50%;
+                        background-size: 13px;
+                        width: 22px;
+                        height: 22px;
+                        padding: 4px;
+                        background-color: rgb(205,208,209);
+                        border-radius: 50%;
+                        margin-right: 4px;
+                    }
+
+                    span {
+                        margin-right: 4px;
+                    }
+                }
+            }
+            
+            .header_navbar_register-btn {
+                height: 36px;
+                line-height: 36px;
+                background-color: $primary-color;
+                color: #fff;
+                padding: 0 16px;
+
+                &:hover {
+                    background-color: #017ef3;
+                }
+            }
+
+            // common
+            .navbar_dropdown-arrow {
+                width: 12px;
+                margin-top: 2px;
+            }
+        }
+    }
+
+    .header_categories {
+        height: 40px;
+        background-color: $hover-color;
+
+        .header_categories-wrapper {
+            max-width: 1280px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            font-size: 1.65rem;
+
+            .header_categories_item {
+                margin-right: 40px;
+                cursor: pointer;
+                position: relative;
+                overflow: visible;
+
+                .header_categories_item-wrapper {
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        margin-right: 4px;
+                    }
+
+                    .categories_dropdown-arrow {
+                        width: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

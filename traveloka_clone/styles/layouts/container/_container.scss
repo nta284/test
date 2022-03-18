@@ -1,0 +1,375 @@
+.container {
+    padding-top: 100px;
+    z-index: 0;
+    margin-bottom: 56px;
+    // margin-bottom: 1000px;
+
+    @import './banners';
+    @import './booking';
+
+    .container_item {
+        width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container_item_header {
+        font-size: 2.5rem;
+        line-height: 28px;
+        font-weight: 500;
+    }
+
+
+    .container_qr-scan-download {
+        margin-top: 108px;
+
+        img {
+            width: 1024px;
+        }
+    }
+
+
+    .container_exclusively {
+        margin-top: 164px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .container_exclusively_header {
+            margin-bottom: 8px;
+        }
+
+        .container_exclusively_sub-header {
+            font-size: 1.65rem;
+            line-height: 24px;
+            margin-bottom: 32px;
+
+            a {
+                color: $primary-color;
+                text-decoration: none;
+            }
+        }
+
+        .container_exclusively_categories {
+            @include flexCenter();
+
+            .container_exclusively_categories-link {
+                text-decoration: none;
+                color: $text-color;
+                margin-right: 8px;
+                height: 24px;
+    
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                .container_exclusively_categories_item {
+                    display: flex;
+                    align-items: center;
+                    
+                    span {
+                        font-size: 1.62rem;
+                        margin: 0 12px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .container_deals {
+        margin-top: 112px;
+
+        .container_deals_header {
+            display: flex;
+            align-items: center;
+
+            .container_deals_header_title {
+                margin-right: 40px;
+            }
+
+            .container_deals_header_icons {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                height: 28px;
+
+                span {
+                    font-size: 2rem;
+                    color: $primary-color;
+                    cursor: pointer;
+                }
+
+                svg {
+                    margin-left: 16px;
+                    opacity: 0.5;
+                    cursor: pointer;
+                }
+            }
+
+            .container_deals_header_link {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+
+                span {
+                    font-size: 2rem;
+                    font-weight: 500;
+                    color: $primary-color;
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        .container_deals_body {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .container_deals_body_item {
+                display: flex;
+                margin: 16px 0 20px;
+
+                .container_deals_body_item_img {
+                    border-radius: 12px;
+                }
+            }
+        }
+    }
+
+
+    .container_as-seen-in {
+        margin-top: 112px;
+
+        .container_as-seen-in_header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .container_as-seen-in_body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .container_as-seen-in_link {
+                display: flex;
+                margin: 16px;
+
+                img {
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+
+    .container_blogs {
+        margin-top: 112px;
+
+        .container_blogs_header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .container_blogs_body {
+            display: flex;
+            align-items: center;
+            margin-left: -12px;
+            margin-right: -12px;
+            
+            .container_blogs_item {
+                width: 25%;
+                height: 316px;
+                padding: 0 12px;
+
+                .container_blogs_item-link {
+                    text-decoration: none;
+                    height: 316px;
+                    position: relative;
+                    display: flex;
+                    overflow-x: hidden;
+                    border-radius: 4px;
+
+                    &:hover .container_blogs_item_mask {
+                        background-color: rgba(35,42,49,0.4);
+                    }
+
+                    .container_blogs_item_mask {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        background-color: rgba(35,42,49,0.65);
+                        transition: 0.2s ease-out;
+                    }
+
+                    .container_blogs_item_img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: 50% 50%;
+                    }
+
+                    .container_blogs_item_title {
+                        position: absolute;
+                        color: #fff;
+                        width: 100%;
+                        bottom: 0;
+                        padding: 16px;
+                        font-size: 1.67rem;
+                        line-height: 20px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    @import './partners';
+
+    .container_why-book {
+        margin-top: 56px;
+        text-align: center;
+
+        .container_why-book_header {
+            margin-bottom: 40px;
+        }
+
+        .container_why-book_body {
+            display: flex;
+            justify-content: center;
+            
+            .container_why-book_item {
+                width: 20%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    margin-bottom: 48px;
+                }
+
+                .container_why-book_item_description {
+                    padding: 0 10px;
+
+                    h3 {
+                        font-size: 2.1rem;
+                        font-weight: 500;
+                        line-height: 24px;
+                        margin-bottom: 16px;
+                    }
+                    
+                    p {
+                        font-size: 1.65rem;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    .container_top-deals {
+        margin-top: 128px;
+        text-align: center;
+
+        .container_top-deals_header {
+            margin-bottom: 24px;
+        }
+
+        .container_top-deals_body {
+            .container_top-deals_navbar {
+                padding: 0 8px;
+                height: 50px;
+                border-top: 1px solid $hover-color;
+                border-bottom: 1px solid $hover-color;
+                position: relative;
+
+                .container_top-deals_navbar-wrapper {
+                    height: 100%;
+                    display: flex;
+
+                    .container_top-deals_navbar_item {
+                        width: 25%;
+                        padding: 0 8px;
+                        @include flexCenter();
+                        
+                        span {
+                            color: #687176;
+                            font-size: 1.49rem;
+                            font-weight: 500;
+                            line-height: 48px;
+                            cursor: pointer;
+                            height: 100%;
+                            width: 100%;
+                            transition-duration: 0s;
+
+                            &.container_top-deals_name--selected {
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
+
+                .container_top-deals_navbar_underline {
+                    position: absolute;
+                    width: 236px;
+                    height: 2px;
+                    bottom: -0.5px;
+                    left: 0;
+                    background-color: $primary-color;
+                    transform: translateX(16px);
+                    transition: 0.2s ease-in-out;
+                }
+            }
+
+            .container_top-deals_categories {
+                margin-top: 24px;
+
+                .container_top-deals_section {
+                    display: none;
+                    opacity: 0;
+                    transform: translateX(25px);
+                    transition: transform 0.3s ease-out;
+                    
+                    &.active-section {
+                        display: flex;
+                        opacity: 1;
+                    }
+                    
+                    &.container_top-deals_section--4col .container_top-deals_section_column {
+                        width: 25%;
+                    }
+
+                    &.container_top-deals_section--3col .container_top-deals_section_column {
+                        width: 33.33%;
+                        margin-right: 5px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+
+                    .container_top-deals_section_column {
+                        height: 100%;
+                        
+                        a {
+                            display: block;
+                            text-decoration: none;
+                            color: $text-color;
+                            text-align: left;
+                            margin-bottom: 12px;
+
+                            span {
+                                font-size: 1.49rem;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
