@@ -27,6 +27,11 @@
             border-top-left-radius: 6px;
             border-bottom-left-radius: 6px;
             overflow-x: hidden;
+            transition: 0.15s ease-out;
+
+            &.container_booking_categories--shrink {
+                width: 57px;
+            }
     
             .container_booking_categories_item {
                 height: 32px;
@@ -35,8 +40,9 @@
                 border-left-style: solid;
                 border-color: transparent;
                 cursor: pointer;
-                display: flex;
-                align-items: center;
+                position: relative;
+                // display: flex;
+                // align-items: center;
                 
                 &:hover {
                     background-color: #fff;
@@ -48,12 +54,17 @@
                 }
     
                 img {
+                    height: 100%;
                     width: 16px;
                     margin-right: 8px;
                 }
     
-                span {
+                .container_booking_categories_item-name {
+                    opacity: 1;
+                    position: absolute;
+                    left: 40px;
                     font-size: 1.5rem;
+                    white-space: nowrap;
                 }
             }
         }
@@ -64,6 +75,10 @@
             cursor: pointer;
             @include flexCenter();
             border-left: 1px solid rgb(205, 208, 209);
+
+            svg.rotate-180 {
+                transform: rotate(180deg);
+            }
     
             &:hover {
                 background-color: rgba(205, 208, 209, 0.31);

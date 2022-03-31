@@ -26,6 +26,12 @@ const bookingSectionMask = document.querySelector(".container_booking_mask");
 
 const bookingSelect = document.querySelector(".container_booking_body_select_tick");
 
+const bookingExpandToggle = document.querySelector(".container_booking_expand-toggle");
+const bookingExpandToggleArrow = document.querySelector(".container_booking_expand-toggle svg");
+const bookingCategories = document.querySelector(".container_booking_categories");
+const bookingBody = document.querySelector(".container_booking_body");
+const bookingCategoryNames = document.querySelectorAll(".container_booking_categories_item-name");
+
 const partnersSliderLeftBtn = document.querySelectorAll(".container_partners_list_left-btn");
 const partnersSliderRightBtn = document.querySelectorAll(".container_partners_list_right-btn");
 
@@ -168,6 +174,8 @@ bannersSliderRightBtn.addEventListener('click', bannersSliderToRight);
 bookingSection.addEventListener('click', event => {
     event.stopPropagation();
     bookingSection.style.zIndex = "5";
+    bookingExpandToggle.style.zIndex = "6";
+    bookingBody.style.zIndex = "6";
     bookingSectionMask.style.zIndex = "4";
     bookingSectionMask.style.visibility = "visible";
     bookingSectionMask.style.opacity = "1";
@@ -186,6 +194,15 @@ document.addEventListener('click', () => {
 bookingSelect.addEventListener('click', () => {
     bookingSelect.classList.toggle("checked");
 })
+
+bookingExpandToggle.addEventListener('click', () => {
+    bookingCategories.classList.toggle("container_booking_categories--shrink");
+    bookingCategoryNames.forEach((ele) => {
+        ele.classList.toggle("opa-0");
+    })
+    bookingExpandToggleArrow.classList.toggle("rotate-180");
+})
+
 
 
 partnersSliderRightBtn.forEach(element => {

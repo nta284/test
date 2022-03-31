@@ -65,6 +65,10 @@ body {
   position: relative;
 }
 
+.opa-0 {
+  opacity: 0 !important;
+}
+
 .btn {
   border: none;
   font-size: inherit;
@@ -969,6 +973,12 @@ body {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   overflow-x: hidden;
+  -webkit-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+}
+
+.container .container_booking .container_booking_wrapper .container_booking_categories.container_booking_categories--shrink {
+  width: 57px;
 }
 
 .container .container_booking .container_booking_wrapper .container_booking_categories .container_booking_categories_item {
@@ -978,12 +988,7 @@ body {
   border-left-style: solid;
   border-color: transparent;
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  position: relative;
 }
 
 .container .container_booking .container_booking_wrapper .container_booking_categories .container_booking_categories_item:hover {
@@ -996,12 +1001,17 @@ body {
 }
 
 .container .container_booking .container_booking_wrapper .container_booking_categories .container_booking_categories_item img {
+  height: 100%;
   width: 16px;
   margin-right: 8px;
 }
 
-.container .container_booking .container_booking_wrapper .container_booking_categories .container_booking_categories_item span {
+.container .container_booking .container_booking_wrapper .container_booking_categories .container_booking_categories_item .container_booking_categories_item-name {
+  opacity: 1;
+  position: absolute;
+  left: 40px;
   font-size: 1.5rem;
+  white-space: nowrap;
 }
 
 .container .container_booking .container_booking_wrapper .container_booking_expand-toggle {
@@ -1022,6 +1032,11 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   border-left: 1px solid #cdd0d1;
+}
+
+.container .container_booking .container_booking_wrapper .container_booking_expand-toggle svg.rotate-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .container .container_booking .container_booking_wrapper .container_booking_expand-toggle:hover {
