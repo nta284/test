@@ -165,33 +165,39 @@
             font-weight: 500;
             margin-bottom: 20px;
         }
-        
-        .header_navbar_login_label {
-            a {
-                color: #0264C8;
-                text-decoration: none;
-                font-weight: 440;
-                position: relative;
-                top: 2px;
 
-                &:hover {
-                    opacity: 0.8;
-                    text-decoration: underline;
+        .header_navbar_login_input-section {
+            margin-bottom: 20px;
+        
+            .header_navbar_login_label {
+                a {
+                    color: #0264C8;
+                    text-decoration: none;
+                    font-weight: 440;
+                    position: relative;
+                    top: 2px;
+    
+                    &:hover {
+                        opacity: 0.8;
+                        text-decoration: underline;
+                    }
                 }
             }
-        }
+    
+            .header_navbar_login_input-wrapper {
+                #header_navbar_login_password-input {
+                    font: caption;
+                    font-size: 1.6rem;
+                }
 
-        .header_navbar_login_input-wrapper {
-            margin-bottom: 20px;
-            width: 100%;
-
-            #header_navbar_login_password-input {
-                font: caption;
-                font-size: 1.6rem;
-            }
-
-            #password-reveal-toggle {
-                transition: 0.15s;
+                .input-wrapper_img-wrapper {
+                    z-index: 2;
+                    cursor: pointer;
+    
+                    #password-reveal-toggle {
+                        transition: 0.15s;
+                    }
+                }
             }
         }
         

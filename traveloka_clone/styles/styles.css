@@ -69,6 +69,19 @@ body {
   opacity: 0 !important;
 }
 
+.opa-1 {
+  opacity: 1 !important;
+}
+
+.translateX-show {
+  -webkit-transform: translateX(0px) !important;
+          transform: translateX(0px) !important;
+}
+
+.visible {
+  visibility: visible !important;
+}
+
 .btn {
   border: none;
   font-size: inherit;
@@ -351,7 +364,11 @@ body {
   margin-bottom: 20px;
 }
 
-.header .header_navbar_login-section .header_navbar_login_body .header_navbar_login_label a {
+.header .header_navbar_login-section .header_navbar_login_body .header_navbar_login_input-section {
+  margin-bottom: 20px;
+}
+
+.header .header_navbar_login-section .header_navbar_login_body .header_navbar_login_input-section .header_navbar_login_label a {
   color: #0264C8;
   text-decoration: none;
   font-weight: 440;
@@ -359,22 +376,22 @@ body {
   top: 2px;
 }
 
-.header .header_navbar_login-section .header_navbar_login_body .header_navbar_login_label a:hover {
+.header .header_navbar_login-section .header_navbar_login_body .header_navbar_login_input-section .header_navbar_login_label a:hover {
   opacity: 0.8;
   text-decoration: underline;
 }
 
-.header .header_navbar_login-section .header_navbar_login_body .header_navbar_login_input-wrapper {
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.header .header_navbar_login-section .header_navbar_login_body .header_navbar_login_input-wrapper #header_navbar_login_password-input {
+.header .header_navbar_login-section .header_navbar_login_body .header_navbar_login_input-section .header_navbar_login_input-wrapper #header_navbar_login_password-input {
   font: caption;
   font-size: 1.6rem;
 }
 
-.header .header_navbar_login-section .header_navbar_login_body .header_navbar_login_input-wrapper #password-reveal-toggle {
+.header .header_navbar_login-section .header_navbar_login_body .header_navbar_login_input-section .header_navbar_login_input-wrapper .input-wrapper_img-wrapper {
+  z-index: 2;
+  cursor: pointer;
+}
+
+.header .header_navbar_login-section .header_navbar_login_body .header_navbar_login_input-section .header_navbar_login_input-wrapper .input-wrapper_img-wrapper #password-reveal-toggle {
   -webkit-transition: 0.15s;
   transition: 0.15s;
 }
@@ -952,6 +969,7 @@ body {
   opacity: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  z-index: 0;
 }
 
 .container .container_booking .container_booking_wrapper {
@@ -965,6 +983,7 @@ body {
   display: flex;
   -webkit-box-shadow: 0px 2px 5px rgba(3, 18, 26, 0.15);
           box-shadow: 0px 2px 5px rgba(3, 18, 26, 0.15);
+  z-index: 0;
 }
 
 .container .container_booking .container_booking_wrapper .container_booking_categories {

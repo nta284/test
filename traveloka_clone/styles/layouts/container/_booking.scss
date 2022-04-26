@@ -9,6 +9,7 @@
         visibility: hidden;
         opacity: 0;
         transition: 0.3s;
+        z-index: 0;
     }
     
     .container_booking_wrapper {
@@ -20,6 +21,7 @@
         margin: -24px auto 0;
         display: flex;
         box-shadow: $box-shadow;
+        z-index: 0;
         
         .container_booking_categories {
             width: 230px;

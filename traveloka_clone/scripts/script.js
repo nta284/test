@@ -109,11 +109,15 @@ passwordReveal.addEventListener('mouseup', () => {
 })
 
 
+function handleSidenav(action) {
+    sidenav.classList[action]('visible');
+    sidenavList.classList[action]('translateX-show');
+    sidenavMask.classList[action]('opa-1');
+}
+
 sidenavOpenBtn.addEventListener('click', event => {
     event.stopPropagation();
-    sidenav.style.visibility = "visible";
-    sidenavList.style.transform = "translateX(0px)";
-    sidenavMask.style.opacity = "1";
+    handleSidenav('toggle');
 })
 
 sidenavList.addEventListener('click', event => {
@@ -121,15 +125,11 @@ sidenavList.addEventListener('click', event => {
 })
 
 document.addEventListener('click', () => {
-    sidenavList.style.transform = "translateX(-100vw)";
-    sidenavMask.style.opacity = "0";
-    sidenav.style.visibility = "hidden";
+    handleSidenav('remove');
 })
 
 sidenavCloseBtn.addEventListener('click', () => {
-    sidenavList.style.transform = "translateX(-100vw)";
-    sidenavMask.style.opacity = "0";
-    sidenav.style.visibility = "hidden";
+    handleSidenav('remove');
 })
 
 
@@ -174,9 +174,7 @@ bannersSliderRightBtn.addEventListener('click', bannersSliderToRight);
 bookingSection.addEventListener('click', event => {
     event.stopPropagation();
     bookingSection.style.zIndex = "5";
-    bookingExpandToggle.style.zIndex = "6";
-    bookingBody.style.zIndex = "6";
-    bookingSectionMask.style.zIndex = "4";
+    bookingSectionMask.style.zIndex = "5";
     bookingSectionMask.style.visibility = "visible";
     bookingSectionMask.style.opacity = "1";
 })

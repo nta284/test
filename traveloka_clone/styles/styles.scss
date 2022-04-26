@@ -23,6 +23,18 @@ body {
     opacity: 0 !important;
 }
 
+.opa-1 {
+    opacity: 1 !important;
+}
+
+.translateX-show {
+    transform: translateX(0px) !important;
+}
+
+.visible {
+    visibility: visible !important;
+}
+
 @import './components/btn';
 @import './components/country-flag';
 @import './components/input';
